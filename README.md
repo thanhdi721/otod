@@ -1,93 +1,204 @@
-# otod_web_layout_ui
+# OTOD Web Layout UI - Laravel Demo
 
+A comprehensive Laravel application showcasing various UI components and web technologies including Bootstrap, jQuery, Vue.js, Chart.js, Leaflet maps, and more.
 
+## Features
 
-## Getting started
+- **Bootstrap Components**: Buttons, alerts, cards, forms, progress bars, badges
+- **jQuery Interactions**: Animations, AJAX, DOM manipulation, event handling
+- **Vue.js Components**: Reactive components and data binding
+- **Chart.js Integration**: Line, bar, pie, doughnut, and radar charts
+- **Leaflet Maps**: Interactive maps with markers and controls
+- **Form Components**: Advanced form elements with validation
+- **Data Tables**: Interactive tables with sorting and filtering
+- **Calendar Widgets**: Date pickers and event management
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Prerequisites
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/activelink1986/otod_web_layout_ui.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/activelink1986/otod_web_layout_ui/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+- PHP 8.1 or higher
+- Composer
+- Web server (Apache/Nginx) or PHP built-in server
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd otod-github
+   ```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+2. **Install PHP dependencies**
+   ```bash
+   composer install
+   ```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+3. **Set up environment file**
+   ```bash
+   cp env.example .env
+   ```
+
+4. **Generate application key**
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Configure your web server**
+   
+   **Option A: Using PHP built-in server (for development)**
+   ```bash
+   php artisan serve
+   ```
+   Then visit `http://localhost:8000`
+
+   **Option B: Using Apache/Nginx**
+   - Point your web server's document root to the `public` directory
+   - Ensure the `storage` and `bootstrap/cache` directories are writable
+
+## Project Structure
+
+```
+otod-github/
+├── app/
+│   ├── Http/Controllers/
+│   │   └── HomeController.php          # Main controller for demo pages
+│   └── Providers/                      # Laravel service providers
+├── config/
+│   └── app.php                        # Application configuration
+├── public/                            # Public assets (CSS, JS, images)
+│   ├── libs/                          # Third-party libraries
+│   │   ├── bootstrap/                 # Bootstrap CSS/JS
+│   │   ├── jquery-3.6.3.min.js       # jQuery library
+│   │   ├── chart_js/                  # Chart.js library
+│   │   ├── leaflet1.4.0/              # Leaflet maps
+│   │   └── vue/                       # Vue.js framework
+│   ├── css/                           # Custom CSS files
+│   └── js/                            # Custom JavaScript files
+├── resources/
+│   └── views/                         # Blade templates
+│       ├── layouts/
+│       │   └── app.blade.php          # Main layout template
+│       ├── demo/                      # Demo page templates
+│       └── home.blade.php             # Homepage template
+├── routes/
+│   ├── web.php                        # Web routes
+│   └── api.php                        # API routes
+└── bootstrap/
+    └── app.php                        # Application bootstrap
+```
+
+## Available Routes
+
+### Main Pages
+- `/` - Homepage with demo overview
+- `/demo/bootstrap` - Bootstrap components demo
+- `/demo/jquery` - jQuery interactions demo
+- `/demo/vue` - Vue.js components demo
+- `/demo/charts` - Chart.js visualizations demo
+- `/demo/calendar` - Calendar widgets demo
+- `/demo/maps` - Leaflet maps demo
+- `/demo/forms` - Form components demo
+- `/demo/tables` - Data tables demo
+
+### API Endpoints
+- `/api/chart-data` - Sample data for charts
+- `/api/table-data` - Sample data for tables
+
+## Demo Features
+
+### Bootstrap Demo (`/demo/bootstrap`)
+- Buttons with different styles and states
+- Alert components with various types
+- Card layouts and components
+- Form elements and validation
+- Progress bars and badges
+
+### jQuery Demo (`/demo/jquery`)
+- Animation effects (fade, slide, animate)
+- AJAX data loading
+- Form validation
+- DOM manipulation
+- Event handling (click, hover, keyboard)
+
+### Charts Demo (`/demo/charts`)
+- Line charts with multiple datasets
+- Bar charts with custom colors
+- Pie and doughnut charts
+- Radar charts for comparisons
+- AJAX-powered dynamic charts
+
+### Maps Demo (`/demo/maps`)
+- Interactive Leaflet maps
+- Marker management
+- Map controls and navigation
+- Preset location buttons
+- Real-time coordinate display
+
+## Customization
+
+### Adding New Demos
+1. Create a new method in `HomeController.php`
+2. Add a route in `routes/web.php`
+3. Create a view template in `resources/views/demo/`
+4. Update the navigation menu in `resources/views/layouts/app.blade.php`
+
+### Styling
+- Custom CSS can be added to `public/css/app.css`
+- Bootstrap can be customized by modifying the Bootstrap variables
+- Additional CSS libraries can be included in the layout template
+
+### JavaScript
+- Custom JavaScript can be added to `public/js/app.js`
+- Additional libraries can be included in individual demo pages
+- AJAX endpoints can be added to `routes/api.php`
+
+## Development
+
+### Adding New Libraries
+1. Download the library files to `public/libs/`
+2. Include CSS/JS files in the appropriate view templates
+3. Update the documentation
+
+### Creating New Components
+1. Create a new controller method
+2. Add the route
+3. Create the view template
+4. Include necessary CSS/JS dependencies
+5. Test the functionality
+
+## Troubleshooting
+
+### Common Issues
+
+1. **500 Server Error**
+   - Check that the `storage` and `bootstrap/cache` directories are writable
+   - Verify that the `.env` file exists and has the correct configuration
+
+2. **Assets Not Loading**
+   - Ensure the web server is pointing to the `public` directory
+   - Check that asset paths are correct in the view templates
+
+3. **Routes Not Working**
+   - Clear the route cache: `php artisan route:clear`
+   - Check that the web server supports URL rewriting
+
+### Debug Mode
+Enable debug mode in `.env`:
+```
+APP_DEBUG=true
+```
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support
+
+For support and questions, please open an issue on the GitHub repository.
