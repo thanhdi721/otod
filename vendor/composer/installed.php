@@ -3,7 +3,7 @@
         'name' => 'otod/web-layout-ui',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fe6aecae82e3494b1aa16d5ff8716c5acb6d4532',
+        'reference' => '6a6a71d57a468b2c625b6ee487cb89f2caf7edc1',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -541,7 +541,7 @@
         'otod/web-layout-ui' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fe6aecae82e3494b1aa16d5ff8716c5acb6d4532',
+            'reference' => '6a6a71d57a468b2c625b6ee487cb89f2caf7edc1',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

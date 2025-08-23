@@ -1,20 +1,31 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+ * |--------------------------------------------------------------------------
+ * | Web Routes
+ * |--------------------------------------------------------------------------
+ * |
+ * | Here is where you can register web routes for your application. These
+ * | routes are loaded by the RouteServiceProvider and all of them will
+ * | be assigned to the "web" middleware group. Make something great!
+ * |
+ */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Car Detail Route
+Route::get('/car-detail', function () {
+    return view('car-detail');
+})->name('car.detail');
+
+// Payment Route
+Route::get('/payment', function () {
+    return view('payment');
+})->name('payment');
 
 // Demo Routes
 Route::prefix('demo')->group(function () {
@@ -36,7 +47,7 @@ Route::prefix('api')->group(function () {
             'data' => [12, 19, 3, 5, 2, 3]
         ]);
     })->name('api.chart-data');
-    
+
     Route::get('/table-data', function () {
         return response()->json([
             'data' => [
