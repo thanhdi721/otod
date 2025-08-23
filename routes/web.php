@@ -27,6 +27,16 @@ Route::get('/payment', function () {
     return view('payment');
 })->name('payment');
 
+// Search Route
+Route::get('/search-detail', function () {
+    return view('search');
+})->name('search');
+
+// Search Route
+Route::get('/search-higher', function () {
+    return view('search-higher');
+})->name('search-higher');
+
 // Demo Routes
 Route::prefix('demo')->group(function () {
     Route::get('/bootstrap', [HomeController::class, 'bootstrap'])->name('demo.bootstrap');
