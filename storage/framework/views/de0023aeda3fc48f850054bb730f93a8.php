@@ -1,8 +1,8 @@
-@extends('layouts.app')
 
-@section('title', 'Search - Laravel Demo Application')
 
-@section('content')
+<?php $__env->startSection('title', 'Search - Laravel Demo Application'); ?>
+
+<?php $__env->startSection('content'); ?>
     <!-- Search Form Section -->
     <!-- Desktop Layout -->
     <div class="container py-4 d-none d-lg-block" style="max-width:100%">
@@ -12,7 +12,7 @@
                 <div class="d-flex border rounded p-3 flex-grow-1 gap-4">
                     <!-- Location Input -->
                     <div class="d-flex align-items-center flex-grow-1 gap-2">
-                        <img src="{{ asset('assets/images/location-01.png') }}" alt="Line" class="img-fluid"
+                        <img src="<?php echo e(asset('assets/images/location-01.png')); ?>" alt="Line" class="img-fluid"
                             style="width:24px; height:24px">
                         <div class="flex-grow-1">
                             <div class="small text-muted mb-1">Địa điểm</div>
@@ -22,7 +22,7 @@
 
                     <!-- Rental Time Input -->
                     <div class="d-flex align-items-center flex-grow-1 px-2 gap-2" style="border-left:dashed 1px #E7E5E4">
-                        <img src="{{ asset('assets/images/calendar-03.png') }}" alt="Line" class="img-fluid"
+                        <img src="<?php echo e(asset('assets/images/calendar-03.png')); ?>" alt="Line" class="img-fluid"
                             style="width:24px; height:24px">
                         <div class="flex-grow-1">
                             <div class="small text-muted mb-1">Thời gian thuê</div>
@@ -54,7 +54,7 @@
             <div class="border rounded p-3 mb-3 mt-3">
                 <!-- Location Input -->
                 <div class="d-flex align-items-center gap-3 mb-3">
-                    <img src="{{ asset('assets/images/location-01.png') }}" alt="Location" class="img-fluid">
+                    <img src="<?php echo e(asset('assets/images/location-01.png')); ?>" alt="Location" class="img-fluid">
                     <div class="flex-grow-1">
                         <div class="small text-muted mb-1">Địa điểm</div>
                         <div class="fw-bold text-dark">TP.Hồ Chí Minh, Việt Nam</div>
@@ -66,7 +66,7 @@
 
                 <!-- Rental Time Input -->
                 <div class="d-flex align-items-center gap-3 mb-4">
-                    <img src="{{ asset('assets/images/calendar-03.png') }}" alt="Calendar" class="img-fluid">
+                    <img src="<?php echo e(asset('assets/images/calendar-03.png')); ?>" alt="Calendar" class="img-fluid">
                     <div class="flex-grow-1">
                         <div class="small text-muted mb-1">Thời gian thuê</div>
                         <div class="fw-bold text-dark">21:00 T7/12/04 - 20:00 CN/13/04</div>
@@ -97,7 +97,7 @@
             <!-- Refresh Button -->
             <button class="btn btn-light rounded-circle d-flex align-items-center justify-content-center"
                 style="width: 40px; height: 40px; min-width: 40px;">
-                <img src="{{ asset('/assets/images/resets.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/resets.png')); ?>" alt="">
             </button>
 
             <!-- 5 Star Filter (Selected) -->
@@ -110,35 +110,35 @@
             <!-- Delivery Filter -->
             <button class="btn btn-light fw-medium px-3 py-2 rounded-4 d-flex align-items-center gap-2"
                 style="min-width: fit-content;">
-                <img src="{{ asset('/assets/images/car-nomarl.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/car-nomarl.png')); ?>" alt="">
                 <span class="text-muted">Giao xe tận nơi</span>
             </button>
 
             <!-- Discount Filter -->
             <button class="btn btn-light fw-medium px-3 py-2 rounded-4 d-flex align-items-center gap-2"
                 style="min-width: fit-content;">
-                <img src="{{ asset('/assets/images/discount.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/discount.png')); ?>" alt="">
                 <span class="text-muted">Giảm giá</span>
             </button>
 
             <!-- OTOD Recommended Filter -->
             <button class="btn btn-light fw-medium px-3 py-2 rounded-4 d-flex align-items-center gap-2"
                 style="min-width: fit-content;">
-                <img src="{{ asset('/assets/images/car-rcmd.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/car-rcmd.png')); ?>" alt="">
                 <span class="text-muted">Xe OTOD đề xuất</span>
             </button>
 
             <!-- Luxury Car Filter -->
             <button class="btn btn-light fw-medium px-3 py-2 rounded-4 d-flex align-items-center gap-2"
                 style="min-width: fit-content;">
-                <img src="{{ asset('/assets/images/car-vip.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/car-vip.png')); ?>" alt="">
                 <span class="text-muted">Xe cao cấp</span>
             </button>
 
             <!-- Mid-range Car Filter -->
             <button class="btn btn-light fw-medium px-3 py-2 rounded-4 d-flex align-items-center gap-2"
                 style="min-width: fit-content;">
-                <img src="{{ asset('/assets/images/car-high.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/car-high.png')); ?>" alt="">
                 <span class="text-muted">Xe trung cấp</span>
             </button>
 
@@ -155,7 +155,7 @@
     <div class="container mb-4 d-none d-lg-block">
         <div class="card card-border rounded-4 overflow-hidden position-relative" style="height: 347px;">
             <!-- Background image -->
-            <img src="{{ asset('assets/images/finance.png') }}" class="position-absolute w-100 h-100 object-fit-cover"
+            <img src="<?php echo e(asset('assets/images/finance.png')); ?>" class="position-absolute w-100 h-100 object-fit-cover"
                 alt="Car interior at night">
 
             <!-- Blue overlay on the left -->
@@ -164,7 +164,7 @@
 
                 <!-- Logo OTOD -->
                 <div class="mb-4">
-                    <img src="{{ asset('/assets/images/logo-white.png') }}" alt="Logo" class="img-fluid"
+                    <img src="<?php echo e(asset('/assets/images/logo-white.png')); ?>" alt="Logo" class="img-fluid"
                         style="max-height: 40px;">
                 </div>
 
@@ -187,7 +187,7 @@
     <div class="container d-block d-lg-none mb-4">
         <div class="card card-border w-100 rounded-4 mt-4 overflow-hidden position-relative" style="height: 180px;">
             <!-- Background image -->
-            <img src="{{ asset('assets/images/finance.png') }}" class="position-absolute w-100 h-100 object-fit-cover"
+            <img src="<?php echo e(asset('assets/images/finance.png')); ?>" class="position-absolute w-100 h-100 object-fit-cover"
                 alt="Car interior at night">
 
             <!-- Blue overlay on the left -->
@@ -196,7 +196,7 @@
 
                 <!-- Logo OTOD -->
                 <div class="mb-4">
-                    <img src="{{ asset('/assets/images/logo-white.png') }}" alt="Logo" class="img-fluid"
+                    <img src="<?php echo e(asset('/assets/images/logo-white.png')); ?>" alt="Logo" class="img-fluid"
                         style="max-height: 40px;">
                 </div>
 
@@ -222,98 +222,98 @@
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <div>
-                @include('components.product-recomend', [
+                <?php echo $__env->make('components.product-recomend', [
                     'name' => 'Kia Rio 2015',
                     'rating' => '4.0',
                     'location' => 'Quận 1, TP Hồ Chí Minh',
                     'image' => asset('assets/images/product-rcm.png'),
                     'old_price' => '976.000đ',
                     'price' => '856.000đ',
-                ])
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
 <style>
     .dashed-line {
@@ -325,3 +325,5 @@
                 transparent 12px);
     }
 </style>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\otod\resources\views/search.blade.php ENDPATH**/ ?>

@@ -21,25 +21,28 @@
             <!-- Search Form -->
             <div class="d-flex position-absolute start-50 translate-middle-x" style="bottom:-32px; min-width: 100%">
                 <div class="bg-white shadow rounded-4 d-flex align-items-center flex-grow-1 gap-3" style="width:100%;">
-                    <div class="d-flex align-items-base flex-grow-1 px-4 py-3">
-                        <i class="bi bi-geo-alt-fill text-primary me-2 fs-5"></i>
+                    <div class="d-flex align-items-center flex-grow-1 gap-2 px-4 py-3">
+                        <img src="{{ asset('assets/images/location-01.png') }}" alt="Line" class="img-fluid"
+                            style="width:24px; height:24px">
                         <div>
                             <div class="small text-muted">Địa điểm</div>
-                            <div class="fs-6 fw-bold">TPHồ Chí Minh, Việt Nam</div>
+                            <div class="fw-bold">TP.Hồ Chí Minh, Việt Nam</div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-base flex-grow-1 px-4 py-3">
-                        <i class="bi bi-calendar-event text-warning me-2 fs-5"></i>
-                        <div>
+                    <div class="d-flex align-items-center flex-grow-1 gap-2 px-4 py-3">
+                        <img src="{{ asset('assets/images/calendar-03.png') }}" alt="Line" class="img-fluid"
+                            style="width:24px; height:24px">
+                        <div class="my-2 w-100">
                             <div class="small text-muted">Thời gian thuê</div>
-                            <div class="fs-6 fw-bold">21:00 T7/20/4 - 20:00 CN/3/04</div>
+                            <div class="fw-bold">21:00 T7/20/4 - 20:00 CN/3/04</div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-base flex-grow-1 px-4 py-3">
-                        <i class="bi bi-car-front-fill text-success me-2 fs-5"></i>
+                    <div class="d-flex align-items-center flex-grow-1 px-4 gap-2 py-3">
+                        <img src="{{ asset('assets/images/car-about.png') }}" alt="Line" class="img-fluid"
+                            style="width:24px; height:12px">
                         <div>
                             <div class="small text-muted">Dịch vụ</div>
-                            <div class="fs-6 fw-bold">Tự lái</div>
+                            <div class="fw-bold">Tự lái</div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +105,8 @@
                 <h2 class="fw-bold mb-0 fs-2">Điểm đến nổi bật</h2>
                 <a href="#" class="text-primary small fw-bold">Xem tất cả</a>
             </div>
-            <div class="d-flex flex-row gap-3 overflow-x-hidden position-relative">
+            <div class="d-flex flex-row gap-3 overflow-x-hidden position-relative"
+                style="scrollbar-width: none; -ms-overflow-style: none;">
                 <!-- Card 1 -->
                 <div style="scroll-snap-align: start;">
                     <div class="card border-0 shadow-sm position-relative overflow-hidden h-100">
@@ -180,7 +184,8 @@
                 <h2 class="fw-bold mb-0" style="font-size:1.4rem;">Điểm đến nổi bật</h2>
                 <a href="#" class="text-primary small fw-bold">Xem tất cả</a>
             </div>
-            <div class="d-flex flex-row gap-3 overflow-auto position-relative">
+            <div class="d-flex flex-row gap-3 overflow-auto position-relative"
+                style="scrollbar-width: none; -ms-overflow-style: none;">
                 <!-- Card 1 -->
                 <div style="width:160px; height:220px; scroll-snap-align: start;">
                     <div class="card border-0 shadow-sm position-relative overflow-hidden h-100">
@@ -299,7 +304,8 @@
             </div>
 
             <!-- Scroll horizontal -->
-            <div class="d-flex flex-nowrap overflow-auto" style="gap: 1rem;">
+            <div class="d-flex flex-nowrap overflow-auto"
+                style="gap: 1rem;scrollbar-width: none; -ms-overflow-style: none;">
                 <div class="flex-shrink-0" style="min-width: 280px; max-width: 306px;">
                     @include('components.product-recomend', [
                         'name' => 'Kia Rio 2015',
@@ -387,7 +393,8 @@
             </div>
 
             <!-- Scroll horizontal -->
-            <div class="d-flex flex-nowrap overflow-auto" style="gap: 1rem;">
+            <div class="d-flex flex-nowrap overflow-auto"
+                style="gap: 1rem;scrollbar-width: none; -ms-overflow-style: none;">
                 <div class="flex-shrink-0" style="min-width: 280px; max-width: 306px;">
                     @include('components.product-recomend', [
                         'name' => 'Kia Rio 2015',
@@ -637,7 +644,8 @@
                 <a href="#" class="text-decoration-none fw-semibold text-primary">Xem tất cả</a>
             </div>
 
-            <div class="d-flex flex-row gap-3 overflow-x-auto" style="scroll-snap-type: x mandatory;">
+            <div class="d-flex flex-row gap-3 overflow-x-auto"
+                style="scroll-snap-type: x mandatory;scrollbar-width: none; -ms-overflow-style: none;">
                 <!-- Card item -->
                 <div class="flex-shrink-0" style="width:212px;">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
@@ -886,7 +894,8 @@
                 <h2 class="fw-bold fs-3 fs-md-2 fs-lg-1 mb-0">Khách hàng nói gì về OTOD</h2>
             </div>
 
-            <div class="d-flex flex-row gap-3 overflow-x-auto mb-4" style="scroll-snap-type: x mandatory;">
+            <div class="d-flex flex-row gap-3 overflow-x-auto mb-4"
+                style="scroll-snap-type: x mandatory;scrollbar-width: none; -ms-overflow-style: none;">
                 <!-- Card item -->
                 <div class="flex-shrink-0" style="width:212px;">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
