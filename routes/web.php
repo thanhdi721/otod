@@ -32,10 +32,15 @@ Route::get('/search-detail', function () {
     return view('search');
 })->name('search');
 
-// Search Route
+// Search Higher Route
 Route::get('/search-higher', function () {
     return view('search-higher');
 })->name('search-higher');
+
+// Search Result Route
+Route::get('/search-result', function () {
+    return view('search-result');
+})->name('search-result');
 
 // Demo Routes
 Route::prefix('demo')->group(function () {
