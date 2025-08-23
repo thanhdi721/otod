@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light btn-light shadow-sm px-4">
+    <nav class="navbar navbar-expand-lg navbar-light btn-light shadow-sm px-2">
         <div class="container" style="max-width: 100%;">
             <!-- Logo -->
             <a class="navbar-brand me-4" href="<?php echo e(route('home')); ?>">
