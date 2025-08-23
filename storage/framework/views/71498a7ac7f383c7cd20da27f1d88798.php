@@ -27,7 +27,7 @@
     <?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!-- Main Content -->
-    <main class="container mt-4">
+    <main class="">
         <?php echo $__env->yieldContent('content'); ?>
     </main>
 
