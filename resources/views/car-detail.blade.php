@@ -167,6 +167,80 @@
         .pickup-option:hover {
           border-color: #0d6efd;
         }
+
+        /* Bottom Drawer Styles */
+        .bottom-drawer {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1050;
+            transition: bottom 0.3s ease-in-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .bottom-drawer.show {
+            bottom: 0;
+        }
+
+        .drawer-header {
+            padding: 20px 20px 10px 20px;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+        }
+
+        .drawer-handle {
+            width: 40px;
+            height: 4px;
+            background: #dee2e6;
+            border-radius: 2px;
+            margin: 0 auto 15px auto;
+        }
+
+        .drawer-body {
+            padding: 20px;
+        }
+
+        .drawer-footer {
+            border-top: 1px solid #e9ecef;
+            background: white;
+        }
+
+        .drawer-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .drawer-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hide modals on mobile */
+        @media (max-width: 767.98px) {
+            .modal {
+                display: none !important;
+            }
+        }
+
+        /* Show modals on desktop */
+        @media (min-width: 768px) {
+            .bottom-drawer {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -890,6 +964,75 @@
         </div>
     </div>
 
+    <!-- Insurance Bottom Drawer -->
+    <div class="drawer-backdrop" id="insuranceDrawerBackdrop"></div>
+    <div class="bottom-drawer" id="insuranceDrawer">
+        <div class="drawer-header">
+            <div class="drawer-handle"></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Bảo hiểm thuê xe</h5>
+                <button type="button" class="btn-close" onclick="closeDrawer('insuranceDrawer')"></button>
+            </div>
+        </div>
+        <div class="drawer-body">
+            <p class="text-muted mb-4">
+                Nếu xe bị hư hỏng hoặc bị đánh cắp, bạn sẽ phải tự chi trả khoản phí phát sinh, 
+                nhưng miễn là bạn có Bảo hiểm toàn diện VNI, VNI sẽ hoàn lại cho bạn số tiền 
+                lên đến 300.000.000 đồng...
+            </p>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="background-color: #2B4896; color: white; text-align:center !important;" class="text-center">Yếu tố bảo hiểm</th>
+                            <th style="background-color: #2B4896; color: white;" class="text-center">Sẵn sàng chấp nhận rủi ro</th>
+                            <th style="background-color: #2B4896; color: white;" class="text-center">Tôi muốn bảo vệ bản thân mình</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start">Thiệt hại do va chạm của xe cho thuê</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Cửa sổ, gương, khung gầm và lốp xe bị hư hỏng</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Chi phí hỗ trợ kéo xe và bên đường</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Chi phí hỗ trợ kéo xe và bên đường</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Hoả hoạn cháy, nổ</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success fs-5"></i></td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger fs-5"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">
+                                <a href="#" class="text-primary text-decoration-none">Điều khoản và điều kiện</a>
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" name="terms" class="form-check-input">
+                            </td>
+                            <td class="text-center">
+                                <input type="radio" name="terms" class="form-check-input" checked>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <!-- Promotion Modal -->
     <div class="modal fade" id="promotionModal" tabindex="-1" aria-labelledby="promotionModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -995,6 +1138,110 @@
         </div>
     </div>
 
+    <!-- Promotion Bottom Drawer -->
+    <div class="drawer-backdrop" id="promotionDrawerBackdrop"></div>
+    <div class="bottom-drawer" id="promotionDrawer">
+        <div class="drawer-header">
+            <div class="drawer-handle"></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Mã khuyến mại</h5>
+                <button type="button" class="btn-close" onclick="closeDrawer('promotionDrawer')"></button>
+            </div>
+        </div>
+        <div class="drawer-body">
+            <!-- Search Bar -->
+            <div class="input-group mb-4">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0" placeholder="Tìm kiếm mã khuyến mại">
+            </div>
+            
+            <!-- Promotion List -->
+            <div class="promotion-list" style="max-height: 400px; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- Promotion Item 1 -->
+                <div class="promotion-item d-flex align-items-center p-3 border rounded mb-3">
+                    <div class="ticket-icon me-1">
+                        <img src="{{ asset('assets/images/voucher.png') }}" alt="gift" class="img-fluid me-2">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fw-bold">Giảm giá : 120k</div>
+                                <div class="text-muted small">Áp dụng cho các khách thuê xe lần đầu</div>
+                                <div class="text-muted small">HSD: 12/2/2026</div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="promotion" class="form-check-input me-2">
+                                <a href="#" class="text-primary text-decoration-none">Dùng ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promotion Item 2 -->
+               <div class="promotion-item d-flex align-items-center p-3 border rounded mb-3">
+                    <div class="ticket-icon me-1">
+                        <img src="{{ asset('assets/images/voucher.png') }}" alt="gift" class="img-fluid me-2">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fw-bold">Giảm giá : 120k</div>
+                                <div class="text-muted small">Áp dụng cho các khách thuê xe lần đầu</div>
+                                <div class="text-muted small">HSD: 12/2/2026</div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="promotion" class="form-check-input me-2">
+                                <a href="#" class="text-primary text-decoration-none">Dùng ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promotion Item 3 -->
+               <div class="promotion-item d-flex align-items-center p-3 border rounded mb-3">
+                    <div class="ticket-icon me-1">
+                        <img src="{{ asset('assets/images/voucher.png') }}" alt="gift" class="img-fluid me-2">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fw-bold">Giảm giá : 120k</div>
+                                <div class="text-muted small">Áp dụng cho các khách thuê xe lần đầu</div>
+                                <div class="text-muted small">HSD: 12/2/2026</div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="promotion" class="form-check-input me-2">
+                                <a href="#" class="text-primary text-decoration-none">Dùng ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promotion Item 4 -->
+                <div class="promotion-item d-flex align-items-center p-3 border rounded mb-3">
+                    <div class="ticket-icon me-1">
+                        <img src="{{ asset('assets/images/voucher.png') }}" alt="gift" class="img-fluid me-2">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="fw-bold">Giảm giá : 120k</div>
+                                <div class="text-muted small">Áp dụng cho các khách thuê xe lần đầu</div>
+                                <div class="text-muted small">HSD: 12/2/2026</div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="promotion" class="form-check-input me-2">
+                                <a href="#" class="text-primary text-decoration-none">Dùng ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Regulations Modal -->
     <div class="modal fade" id="regulationsModal" tabindex="-1" aria-labelledby="regulationsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -1058,6 +1305,69 @@
         </div>
     </div>
 
+    <!-- Regulations Bottom Drawer -->
+    <div class="drawer-backdrop" id="regulationsDrawerBackdrop"></div>
+    <div class="bottom-drawer" id="regulationsDrawer">
+        <div class="drawer-header">
+            <div class="drawer-handle"></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0 text-center w-100">Quy định khác</h5>
+                <button type="button" class="btn-close" onclick="closeDrawer('regulationsDrawer')"></button>
+            </div>
+        </div>
+        <div class="drawer-body">
+            <div class="regulations-list">
+                <!-- Regulation 1 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Sử dụng xe đích đúng</p>
+                </div>
+                
+                <!-- Regulation 2 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Không sử dụng tài sản vào phi pháp, trái pháp luật mục tiêu</p>
+                </div>
+                
+                <!-- Regulation 3 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Không sử dụng xe thiết để cầm cố, thế chấp</p>
+                </div>
+                
+                <!-- Regulation 4 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Không hút thuốc, kẹo cao su, xả rác trong xe</p>
+                </div>
+                
+                <!-- Regulation 5 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Không bỏ hàng quốc gia dễ cháy nổ</p>
+                </div>
+                
+                <!-- Regulation 6 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Không giả hoa quả, thực phẩm nặng mùi trong xe</p>
+                </div>
+                
+                <!-- Regulation 7 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Khi trả xe, nếu xe Vết thương hoặc có mùi trong xe, khách hàng vui lòng bảo vệ xe sạch sẽ hoặc gửi phụ thu phí bảo vệ xe</p>
+                </div>
+                
+                <!-- Regulation 8 -->
+                <div class="regulation-item pb-1 mb-1 border-bottom">
+                    <p class="text-muted mb-0">Xe được giới hạn di chuyển ở mức 300km cho 24h, và các lần như 150km, 200km, 250 km cho gói 4h, 8h, 12h</p>
+                </div>
+                
+                <!-- Regulation 9 -->
+                <div class="regulation-item pb-1 mb-1">
+                    <p class="text-muted mb-0">Phí quá giờ áp dụng là 150.000 đồng cho gói 24h, và 400.000 đồng cho gói 4h, 350.000 đồng cho gói 8h, 200.000 đồng cho gói 12h</p>
+                </div>
+            </div>
+        </div>
+        <div class="drawer-footer p-3 text-center">
+            <button type="button" class="btn btn-primary px-5 py-2 fw-semibold" style="background: #2B4896; border: none;" onclick="closeDrawer('regulationsDrawer')">Đồng ý</button>
+        </div>
+    </div>
+
     <!-- OTOD Fee Modal -->
     <div class="modal fade" id="otodFeeModal" tabindex="-1" aria-labelledby="otodFeeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -1098,6 +1408,49 @@
                     <button type="button" class="btn px-5 py-2 fw-semibold rounded" style="background: #FFD700; color: #000; border: none;">Đóng</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- OTOD Fee Bottom Drawer -->
+    <div class="drawer-backdrop" id="otodFeeDrawerBackdrop"></div>
+    <div class="bottom-drawer" id="otodFeeDrawer">
+        <div class="drawer-header">
+            <div class="drawer-handle"></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Phí dịch vụ OTOD</h5>
+                <button type="button" class="btn-close" onclick="closeDrawer('otodFeeDrawer')"></button>
+            </div>
+        </div>
+        <div class="drawer-body">
+            <div class="service-list">
+                <!-- Service 1 -->
+                <div class="service-item mb-3">
+                    <p class="text-muted mb-0">Dịch vụ tổng đài, chăm sóc & hỗ trợ khách hàng đặt xe</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-item mb-3">
+                    <p class="text-muted mb-0">Tìm xe thay thế / hoàn tiền / đền tiền nếu chuyến bị hủy bởi chủ xe</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-item mb-3">
+                    <p class="text-muted mb-0">Tìm xe thay thế / hoàn tiền nếu bạn thay đổi lịch trình</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-item mb-3">
+                    <p class="text-muted mb-0">Hỗ trợ dàn xếp tranh chấp phát sinh với chủ xe (nếu có)</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-item mb-3">
+                    <p class="text-muted mb-0">Hỗ trợ làm việc với nhà bảo hiểm, garage đối tác khi xảy ra sự cố (nếu có).</p>
+                </div>
+            </div>
+        </div>
+        <div class="drawer-footer p-3 text-center">
+            <button type="button" class="btn px-5 py-2 fw-semibold rounded" style="background: #FFD700; color: #000; border: none;" onclick="closeDrawer('otodFeeDrawer')">Đóng</button>
         </div>
     </div>
 
@@ -1236,27 +1589,95 @@
 
         // Insurance modal functionality
         function openInsuranceModal() {
-            const modal = new bootstrap.Modal(document.getElementById('insuranceModal'));
-            modal.show();
+            if (window.innerWidth < 768) {
+                // Mobile: show drawer
+                openDrawer('insuranceDrawer');
+            } else {
+                // Desktop: show modal
+                const modal = new bootstrap.Modal(document.getElementById('insuranceModal'));
+                modal.show();
+            }
         }
 
         // Promotion modal functionality
         function openPromotionModal() {
-            const modal = new bootstrap.Modal(document.getElementById('promotionModal'));
-            modal.show();
+            if (window.innerWidth < 768) {
+                // Mobile: show drawer
+                openDrawer('promotionDrawer');
+            } else {
+                // Desktop: show modal
+                const modal = new bootstrap.Modal(document.getElementById('promotionModal'));
+                modal.show();
+            }
         }
 
         // Regulations modal functionality
         function openRegulationsModal() {
-            const modal = new bootstrap.Modal(document.getElementById('regulationsModal'));
-            modal.show();
+            if (window.innerWidth < 768) {
+                // Mobile: show drawer
+                openDrawer('regulationsDrawer');
+            } else {
+                // Desktop: show modal
+                const modal = new bootstrap.Modal(document.getElementById('regulationsModal'));
+                modal.show();
+            }
         }
 
         // OTOD Fee modal functionality
         function openOtodFeeModal() {
-            const modal = new bootstrap.Modal(document.getElementById('otodFeeModal'));
-            modal.show();
+            if (window.innerWidth < 768) {
+                // Mobile: show drawer
+                openDrawer('otodFeeDrawer');
+            } else {
+                // Desktop: show modal
+                const modal = new bootstrap.Modal(document.getElementById('otodFeeModal'));
+                modal.show();
+            }
         }
+
+        // Drawer functionality
+        function openDrawer(drawerId) {
+            const drawer = document.getElementById(drawerId);
+            const backdrop = document.getElementById(drawerId + 'Backdrop');
+            
+            if (drawer && backdrop) {
+                drawer.classList.add('show');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeDrawer(drawerId) {
+            const drawer = document.getElementById(drawerId);
+            const backdrop = document.getElementById(drawerId + 'Backdrop');
+            
+            if (drawer && backdrop) {
+                drawer.classList.remove('show');
+                backdrop.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close drawer when clicking backdrop
+        document.addEventListener('DOMContentLoaded', function() {
+            const backdrops = document.querySelectorAll('.drawer-backdrop');
+            backdrops.forEach(backdrop => {
+                backdrop.addEventListener('click', function() {
+                    const drawerId = this.id.replace('Backdrop', '');
+                    closeDrawer(drawerId);
+                });
+            });
+
+            // Close drawer on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const openDrawers = document.querySelectorAll('.bottom-drawer.show');
+                    openDrawers.forEach(drawer => {
+                        closeDrawer(drawer.id);
+                    });
+                }
+            });
+        });
 
         // Navigate to payment page
         function navigateToPayment() {
