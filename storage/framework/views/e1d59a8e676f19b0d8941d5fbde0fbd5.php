@@ -5,7 +5,7 @@
         <!-- Personal Information -->
         <a href="/profile" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/profile-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/profile-ic.png')); ?>" alt="">
                 <span class="menu-text">Thông tin cá nhân</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -14,7 +14,7 @@
         <!-- Car Rental History -->
         <a href="/car-rental-history" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/history-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/history-ic.png')); ?>" alt="">
                 <span class="menu-text">Lịch sử thuê xe</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -23,7 +23,7 @@
         <!-- Favorites -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/fav-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/fav-ic.png')); ?>" alt="">
                 <span class="menu-text">Yêu thích</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -32,7 +32,7 @@
         <!-- Discount Codes & Gifts -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/voucher-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/voucher-ic.png')); ?>" alt="">
                 <span class="menu-text">Mã giảm giá & quà tặng</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -41,7 +41,7 @@
         <!-- Rent & Increase Income -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/finance-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/finance-ic.png')); ?>" alt="">
                 <span class="menu-text">Cho thuê & tăng thu nhập</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -50,7 +50,7 @@
         <!-- My Gifts -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/gif-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/gif-ic.png')); ?>" alt="">
                 <span class="menu-text">Quà của tôi</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -59,7 +59,7 @@
         <!-- Information Verification -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/success-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/success-ic.png')); ?>" alt="">
                 <span class="menu-text">Xác thực thông tin</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -68,7 +68,7 @@
         <!-- Feedback -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/chat-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/chat-ic.png')); ?>" alt="">
                 <span class="menu-text">Góp ý</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -77,7 +77,7 @@
         <!-- Language -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/tran-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/tran-ic.png')); ?>" alt="">
                 <span class="menu-text">Ngôn ngữ</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -86,7 +86,7 @@
         <!-- Referral Code -->
         <a href="/refer" class="menu-item">
             <div class="menu-item-content">
-                <img src="{{ asset('/assets/images/refer-ic.png') }}" alt="">
+                <img src="<?php echo e(asset('/assets/images/refer-ic.png')); ?>" alt="">
                 <span class="menu-text">Mã giới thiệu</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
@@ -316,3 +316,4 @@
         }
     });
 </script>
+<?php /**PATH D:\Source Web\otod-github\otod\resources\views/layouts/sidebar-left.blade.php ENDPATH**/ ?>

@@ -140,4 +140,3 @@ class ContentDiscoverController extends Controller
         return response()->json($content);
     }
 }
-

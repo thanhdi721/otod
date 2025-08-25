@@ -127,6 +127,29 @@ Route::get('/refer', function () {
     return view('refer');
 })->name('refer');
 
+// Notifications page
+Route::get('/notifications', function () {
+    return view('notifications');
+});
+
+// Chat bot AI page
+Route::get('/chat-bot', function () {
+    return view('chat-bot');
+});
+// Content Detail Route
+Route::get('/content-detail', function () {
+    $article = [
+        'title' => request('title') ? urldecode(request('title')) : "Experience the Serenity of Japan's Traditional Countryside",
+        'date' => request('date') ?: '12/04/2024',
+        'section' => request('section') ?: 'noi-bat',
+        'id' => request('id') ?: 0
+    ];
+
+    return view('content-detail', compact('article'));
+})->name('content.detail');  // Profile page
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 // Demo Routes
 Route::prefix('demo')->group(function () {
     Route::get('/bootstrap', [HomeController::class, 'bootstrap'])->name('demo.bootstrap');

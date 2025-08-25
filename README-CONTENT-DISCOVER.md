@@ -91,4 +91,3 @@ Trang khám phá nội dung với các tính năng tương tự như trong hình
 - Cần có Font Awesome để hiển thị icons
 - Hình ảnh placeholder cần được thay thế bằng hình ảnh thực tế
 - Có thể tích hợp với database để lấy dữ liệu động
-

@@ -1,289 +1,425 @@
+<?php $__env->startSection('title', 'Discover - OTOD'); ?>
 
+<?php $__env->startSection('content'); ?>
+<div class="container py-5">
+  <h2 class="fw-bold mb-4">Mini Story</h2>
 
-<?php $__env->startSection('title', 'Khám phá nội dung - OTOD'); ?>
+  <!-- Tabs -->
+  <ul class="nav nav-pills mb-4 gap-2" id="contentTabs">
+    <?php
+    $tabs = [
+        ['id' => 'noi-bat', 'name' => 'Bài viết nổi bật', 'active' => true],
+        ['id' => 'food-tour', 'name' => 'Food Tour', 'active' => false],
+        ['id' => 'bien-xanh', 'name' => 'Khám phá biển xanh', 'active' => false],
+        ['id' => 'tam-linh', 'name' => 'Hành trình tâm linh', 'active' => false]
+    ];
+    ?>
+    <?php $__currentLoopData = $tabs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tab): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <li class="nav-item">
+        <button class="nav-link tab-btn <?php echo e($tab['active'] ? 'active' : ''); ?>" 
+                data-tab="<?php echo e($tab['id']); ?>"
+                style="color: <?php echo e($tab['active'] ? '#fff' : '#000'); ?>; 
+                       background-color: <?php echo e($tab['active'] ? '#2B4896' : '#F4F4F4'); ?>; 
+                       border-radius: 24px;">
+          <?php echo e($tab['name']); ?>
+
+        </button>
+      </li>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </ul>
+
+  <!-- Carousel - Only show for "Bài viết nổi bật" -->
+  <div id="storyCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Item 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex gap-3 justify-content-start overflow-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+          <style>.d-flex.gap-3::-webkit-scrollbar { display: none; }</style>
+          <?php
+$storyUsers = ['Tuấn Trần', 'Mai Anh', 'Hoàng Nam', 'Thu Hà', 'Văn Đức', 'Lan Anh', 'Minh Tuấn'];
+?>
+          <?php $__currentLoopData = $storyUsers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="story-card" style="min-width: 140px;">
+              <img src="<?php echo e(asset('/assets/images/img-story.png')); ?>" class="bg" alt="">
+              <div class="avatar"><img src="<?php echo e(asset('/assets/images/avatar.png')); ?>" alt=""></div>
+              <div class="user-name"><?php echo e($user); ?></div>
+            </div>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="carousel-item">
+        <div class="d-flex gap-3 justify-content-start overflow-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+          <style>.d-flex.gap-3::-webkit-scrollbar { display: none; }</style>
+          <?php $__currentLoopData = $storyUsers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="story-card" style="min-width: 140px;">
+              <img src="<?php echo e(asset('/assets/images/img-story.png')); ?>" class="bg" alt="">
+              <div class="avatar"><img src="<?php echo e(asset('/assets/images/avatar.png')); ?>" alt=""></div>
+              <div class="user-name"><?php echo e($user); ?></div>
+            </div>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#storyCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#storyCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Content Sections -->
+  <?php
+$sections = [
+    [
+        'id' => 'noi-bat',
+        'title' => 'Nổi bật',
+        'cards' => [
+            ['title' => "Experience the Serenity of Japan's Traditional Countryside", 'date' => '12/04/2024'],
+            ['title' => 'Discover the Hidden Gems of Vietnamese Street Food', 'date' => '10/04/2024'],
+            ['title' => 'Exploring the Blue Waters of Southeast Asia', 'date' => '08/04/2024'],
+            ['title' => 'Spiritual Journey Through Ancient Temples', 'date' => '05/04/2024']
+        ]
+    ],
+    [
+        'id' => 'food-tour',
+        'title' => 'Food Tour',
+        'cards' => [
+            ['title' => 'Traditional Japanese Ramen Experience', 'date' => '15/04/2024'],
+            ['title' => 'Vietnamese Pho Cooking Class', 'date' => '13/04/2024'],
+            ['title' => 'Street Food Adventure in Bangkok', 'date' => '11/04/2024'],
+            ['title' => 'Korean BBQ Masterclass', 'date' => '09/04/2024'],
+        ]
+    ],
+    [
+        'id' => 'bien-xanh',
+        'title' => 'Khám phá biển xanh',
+        'cards' => [
+            ['title' => 'Scuba Diving in the Great Barrier Reef', 'date' => '18/04/2024'],
+            ['title' => 'Island Hopping in the Philippines', 'date' => '16/04/2024'],
+            ['title' => 'Whale Watching in Hawaii', 'date' => '14/04/2024'],
+            ['title' => 'Beach Resort Experience in Maldives', 'date' => '12/04/2024']
+        ]
+    ],
+    [
+        'id' => 'tam-linh',
+        'title' => 'Hành trình tâm linh',
+        'cards' => [
+            ['title' => 'Meditation Retreat in Bali', 'date' => '20/04/2024'],
+            ['title' => 'Temple Tour in Kyoto', 'date' => '18/04/2024'],
+            ['title' => 'Yoga Workshop in Rishikesh', 'date' => '16/04/2024'],
+            ['title' => 'Buddhist Monastery Experience', 'date' => '14/04/2024']
+        ]
+    ]
+];
+?>
+
+  <!-- All sections for "Bài viết nổi bật" -->
+  <div class="all-sections active">
+    <?php $__currentLoopData = $sections; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $section): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <div class="mt-5">
+        <h3 class="fw-bold mb-4"><?php echo e($section['title']); ?></h3>
+        
+        <?php if($section['id'] === 'noi-bat'): ?>
+          <!-- Horizontal scroll layout for Nổi bật (same as other sections) -->
+          <div class="highlight-wrapper row g-4 flex-md-row flex-nowrap overflow-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+            <style>.highlight-wrapper::-webkit-scrollbar{display:none;}</style>
+            
+            <?php $__currentLoopData = $section['cards']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $card): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <div class="col-md-3 col-8">
+                <a href="<?php echo e(route('content.detail', ['id' => $loop->index, 'section' => $section['id'], 'title' => urlencode($card['title']), 'date' => $card['date']])); ?>" class="text-decoration-none">
+                  <div class="highlight-card">
+                    <img src="<?php echo e(asset('/assets/images/img-prd.png')); ?>" alt="<?php echo e($card['title']); ?>">
+                    <div class="card-body">
+                      <h5><?php echo e($card['title']); ?></h5>
+                      <div class="date-info">
+                        <i class="fas fa-calendar"></i>
+                        <span><?php echo e($card['date']); ?></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+        <?php else: ?>
+          <!-- Horizontal scroll layout for other sections -->
+          <div class="highlight-wrapper row g-4 flex-md-row flex-nowrap overflow-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+            <style>.highlight-wrapper::-webkit-scrollbar{display:none;}</style>
+            
+            <?php $__currentLoopData = $section['cards']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $card): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <div class="col-md-3 col-8">
+                <a href="<?php echo e(route('content.detail', ['id' => $loop->index, 'section' => $section['id'], 'title' => urlencode($card['title']), 'date' => $card['date']])); ?>" class="text-decoration-none">
+                  <div class="highlight-card">
+                    <img src="<?php echo e(asset('/assets/images/img-prd.png')); ?>" alt="<?php echo e($card['title']); ?>">
+                    <div class="card-body">
+                      <h5><?php echo e($card['title']); ?></h5>
+                      <div class="date-info">
+                        <i class="fas fa-calendar"></i>
+                        <span><?php echo e($card['date']); ?></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+        <?php endif; ?>
+      </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </div>
+
+  <!-- Individual sections for other tabs -->
+  <?php $__currentLoopData = $sections; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $section): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php if($section['id'] !== 'noi-bat'): ?>
+      <div class="single-section" id="single-section-<?php echo e($section['id']); ?>">
+        <div class="mt-5">
+          <h3 class="fw-bold mb-4"><?php echo e($section['title']); ?></h3>
+          <div class="row g-4">
+            <?php $__currentLoopData = $section['cards']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $card): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <a href="<?php echo e(route('content.detail', ['id' => $loop->index, 'section' => $section['id'], 'title' => urlencode($card['title']), 'date' => $card['date']])); ?>" class="text-decoration-none">
+                  <div class="highlight-card">
+                    <img src="<?php echo e(asset('/assets/images/img-prd.png')); ?>" alt="<?php echo e($card['title']); ?>">
+                    <div class="card-body">
+                      <h5><?php echo e($card['title']); ?></h5>
+                      <div class="date-info">
+                        <i class="fas fa-calendar"></i>
+                        <span><?php echo e($card['date']); ?></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+</div>
+<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
-    .content-discover {
-        background: #f8f9fa;
-        min-height: 100vh;
-        padding: 2rem 0;
-    }
+  .story-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+  .story-card img.bg {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .story-card .avatar {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    overflow: hidden;
+  }
+  .story-card .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .highlight-scroll {
+    position: relative;
+  }
+  .highlight-scroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, #fff, transparent);
+  }
+  .story-card .user-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100%;
+    text-align: start;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    font-size: 14px;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 40%;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 1;
+  }
+  .carousel-control-prev span, .carousel-control-next span {
+    filter: invert(1);
+  }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
+  /* Card bài viết nổi bật */
+  .highlight-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+    border: none;
+    color: inherit;
+  }
+  .highlight-card img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .highlight-card .card-body {
+    background: unset !important;
+    padding: 16px;
+  }
+  .highlight-card h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .highlight-card .date-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 14px;
+  }
+  .highlight-card .date-info i {
+    font-size: 16px;
+    color: #999;
+  }
+  
+  /* Link styling */
+  .highlight-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .highlight-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+  }
 
-    .section {
-        margin-bottom: 3rem;
-    }
+  /* Content sections */
+  .all-sections, .single-section {
+    display: none;
+  }
+  .all-sections.active, .single-section.active {
+    display: block;
+  }
 
-    .section-title {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 1.5rem;
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .story-card img.bg { height: unset; }
+    .story-card .avatar { width: 40px; height: 40px; top: 8px; }
+    .story-card .user-name { font-size: 12px; bottom: 8px; }
+    .highlight-card img { height: 180px; }
+    .highlight-card .card-body { padding: 12px; }
+    .highlight-card h5 { font-size: 15px; }
+    
+    /* Tabs scroll ngang trên mobile */
+    .nav-pills {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
-
-    .category-filters {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 2rem;
-        flex-wrap: wrap;
+    .nav-pills::-webkit-scrollbar {
+      display: none;
     }
-
-    .category-filter {
-        padding: 8px 16px;
-        border-radius: 20px;
-        border: none;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        background: #e9ecef;
-        color: #333;
+    .nav-pills .nav-link {
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-
-    .category-filter.active {
-        background: #007bff;
-        color: white;
+  }
+  
+  @media (max-width: 576px) {
+    .highlight-card img { height: unset; }
+    .highlight-card .card-body { padding: 10px; }
+    .highlight-card h5 { font-size: 14px; }
+    .highlight-card .date-info { font-size: 13px; }
+    
+    /* Tabs scroll ngang cho mobile nhỏ */
+    .nav-pills .nav-link {
+      font-size: 14px;
+      padding: 8px 16px;
     }
-
-    .category-filter:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-    }
-
-    .carousel-container {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .carousel-content {
-        display: flex;
-        transition: transform 0.3s ease;
-        gap: 0;
-    }
-
-    .carousel-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: white;
-        border: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        transition: all 0.3s ease;
-    }
-
-    .carousel-nav:hover {
-        background: #f8f9fa;
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    .carousel-nav.prev {
-        left: -20px;
-    }
-
-    .carousel-nav.next {
-        right: -20px;
-    }
-
-    .carousel-nav i {
-        font-size: 14px;
-        color: #333;
-    }
-
-    @media (max-width: 768px) {
-        .category-filters {
-            justify-content: center;
-        }
-        
-        .carousel-nav {
-            width: 35px;
-            height: 35px;
-        }
-        
-        .carousel-nav.prev {
-            left: -15px;
-        }
-        
-        .carousel-nav.next {
-            right: -15px;
-        }
-    }
+  }
 </style>
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('content'); ?>
-<div class="content-discover">
-    <div class="container">
-        <!-- Mini Story Section -->
-        <section class="section">
-            <h2 class="section-title">Mini Story</h2>
-            
-            <div class="category-filters">
-                <button class="category-filter active" data-category="featured">Bài viết nổi bật</button>
-                <button class="category-filter" data-category="food">Food Tour</button>
-                <button class="category-filter" data-category="sea">Khám phá biển xanh</button>
-                <button class="category-filter" data-category="spiritual">Hành trình tâm linh</button>
-            </div>
-
-            <div class="carousel-container">
-                <button class="carousel-nav prev" onclick="scrollCarousel('mini-story', 'left')">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <div class="carousel-content" id="mini-story-carousel">
-                    <?php $__currentLoopData = $miniStories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $story): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php if (isset($component)) { $__componentOriginal69a499f6737c5d56daf65be098d5763e = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal69a499f6737c5d56daf65be098d5763e = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.mini-story-card','data' => ['image' => ''.e($story['image']).'','authorName' => ''.e($story['authorName']).'','authorAvatar' => ''.e($story['authorAvatar']).'']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('mini-story-card'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['image' => ''.e($story['image']).'','authorName' => ''.e($story['authorName']).'','authorAvatar' => ''.e($story['authorAvatar']).'']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal69a499f6737c5d56daf65be098d5763e)): ?>
-<?php $attributes = $__attributesOriginal69a499f6737c5d56daf65be098d5763e; ?>
-<?php unset($__attributesOriginal69a499f6737c5d56daf65be098d5763e); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal69a499f6737c5d56daf65be098d5763e)): ?>
-<?php $component = $__componentOriginal69a499f6737c5d56daf65be098d5763e; ?>
-<?php unset($__componentOriginal69a499f6737c5d56daf65be098d5763e); ?>
-<?php endif; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </div>
-                
-                <button class="carousel-nav next" onclick="scrollCarousel('mini-story', 'right')">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-
-        <!-- Featured Section -->
-        <section class="section">
-            <h2 class="section-title">Nổi bật</h2>
-            
-            <div class="carousel-container">
-                <button class="carousel-nav prev" onclick="scrollCarousel('featured', 'left')">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <div class="carousel-content" id="featured-carousel">
-                    <?php $__currentLoopData = $featuredContent; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $content): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php if (isset($component)) { $__componentOriginal8478432e61b79a2accd52008408b472d = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal8478432e61b79a2accd52008408b472d = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.featured-card','data' => ['image' => ''.e($content['image']).'','title' => ''.e($content['title']).'','date' => ''.e($content['date']).'']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('featured-card'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['image' => ''.e($content['image']).'','title' => ''.e($content['title']).'','date' => ''.e($content['date']).'']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal8478432e61b79a2accd52008408b472d)): ?>
-<?php $attributes = $__attributesOriginal8478432e61b79a2accd52008408b472d; ?>
-<?php unset($__attributesOriginal8478432e61b79a2accd52008408b472d); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal8478432e61b79a2accd52008408b472d)): ?>
-<?php $component = $__componentOriginal8478432e61b79a2accd52008408b472d; ?>
-<?php unset($__componentOriginal8478432e61b79a2accd52008408b472d); ?>
-<?php endif; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </div>
-                
-                <button class="carousel-nav next" onclick="scrollCarousel('featured', 'right')">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-    </div>
-</div>
-
+<?php $__env->startSection('scripts'); ?>
 <script>
-function scrollCarousel(carouselId, direction) {
-    const carousel = document.getElementById(carouselId + '-carousel');
-    const scrollAmount = 300;
-    
-    if (direction === 'left') {
-        carousel.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
-    } else {
-        carousel.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Category filter functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const categoryFilters = document.querySelectorAll('.category-filter');
-    
-    categoryFilters.forEach(filter => {
-        filter.addEventListener('click', function() {
-            // Remove active class from all filters
-            categoryFilters.forEach(f => f.classList.remove('active'));
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const allSections = document.querySelector('.all-sections');
+    const singleSections = document.querySelectorAll('.single-section');
+    const storyCarousel = document.getElementById('storyCarousel');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
             
-            // Add active class to clicked filter
+            // Remove active class from all tabs
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.color = '#000';
+                btn.style.backgroundColor = '#F4F4F4';
+            });
+            
+            // Add active class to clicked tab
             this.classList.add('active');
+            this.style.color = '#fff';
+            this.style.backgroundColor = '#2B4896';
             
-            // Filter content based on category
-            const category = this.dataset.category;
-            filterContentByCategory(category);
+            // Show/hide sections based on tab
+            if (targetTab === 'noi-bat') {
+                // Show all sections and story carousel
+                allSections.classList.add('active');
+                singleSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                storyCarousel.style.display = 'block';
+            } else {
+                // Hide all sections and story carousel, show only specific section
+                allSections.classList.remove('active');
+                singleSections.forEach(section => {
+                    if (section.id === 'single-section-' + targetTab) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+                storyCarousel.style.display = 'none';
+            }
         });
     });
 });
-
-function filterContentByCategory(category) {
-    // Show loading state
-    const carousel = document.getElementById('mini-story-carousel');
-    carousel.innerHTML = '<div style="text-align: center; padding: 2rem;">Loading...</div>';
-    
-    // Fetch content for selected category
-    fetch(`/content-discover/category/${category}`)
-        .then(response => response.json())
-        .then(data => {
-            // Update carousel content
-            carousel.innerHTML = '';
-            data.forEach(story => {
-                const card = document.createElement('div');
-                card.className = 'mini-story-card';
-                card.innerHTML = `
-                    <div class="mini-story-image">
-                        <img src="${story.image}" alt="Story" loading="lazy">
-                    </div>
-                    <div class="mini-story-author">
-                        <span>${story.title}</span>
-                    </div>
-                `;
-                carousel.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching content:', error);
-            carousel.innerHTML = '<div style="text-align: center; padding: 2rem;">Error loading content</div>';
-        });
-}
 </script>
 <?php $__env->stopSection(); ?>
 

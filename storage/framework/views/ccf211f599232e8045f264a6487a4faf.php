@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="d-none d-lg-flex align-items-center ms-4">
-                    <a href="#" class="me-3 text-dark"><i class="bi bi-search fs-5"></i></a>
+                    <a href="<?php echo e(route('search')); ?>" class="me-3 text-dark"><i class="bi bi-search fs-5"></i></a>
                     <a href="#" class="me-3 text-dark position-relative">
                         <i class="bi bi-bell fs-5"></i>
                         <span
