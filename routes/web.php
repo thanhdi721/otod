@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ContentDiscoverController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/car-detail', function () {
     return view('car-detail');
 })->name('car-detail');
-
 
 // Payment Route
 Route::get('/payment', function () {
@@ -67,6 +67,30 @@ Route::get('/car-confirm-prepare', function () {
 Route::get('/car-return', function () {
     return view('car-return');
 })->name('car-return');
+
+// Verification Form Route
+Route::get('/verification', function () {
+    return view('verification');
+})->name('verification');
+
+// GPLX Verification Form Route
+Route::get('/verification/gplx', function () {
+    return view('verification-gplx');
+})->name('verification.gplx');
+
+// CCCD Verification Form Route
+Route::get('/verification/cccd', function () {
+    return view('verification-cccd');
+})->name('verification.cccd');
+
+// VNeID Verification Form Route
+Route::get('/verification/vneid', function () {
+    return view('verification-vneid');
+})->name('verification.vneid');
+
+// Content Discover Route
+Route::get('/content-discover', [ContentDiscoverController::class, 'index'])->name('content.discover');
+Route::get('/content-discover/category/{category}', [ContentDiscoverController::class, 'getContentByCategory'])->name('content.category');
 
 // Car Exterior Photos Return Route
 Route::get('/car-exterior-photos-return', function () {

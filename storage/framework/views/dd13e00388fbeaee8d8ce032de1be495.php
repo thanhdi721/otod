@@ -2,7 +2,7 @@
     <div class="container " style="max-width: 100%;">
         <div class="row gy-4 align-items-start">
             <!-- Logo & Info -->
-            <div class="col-12 col-lg-3  text-lg-start mb-4 mb-lg-0">
+            <div class="col-12 col-lg-5  text-lg-start mb-4 mb-lg-0">
                 <img src="<?php echo e(asset('/assets/images/Logo.png')); ?>" alt="Logo" style="height:40px;">
                 <div class="mt-3 mb-2 fw-bold">Công ty cổ phần OTOD</div>
                 <div class="small mb-1">MST: 0408926996</div>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <!-- Điều khoản -->
-            <div class="col-6 col-lg-3 mb-3">
+            <div class="col-6 col-lg-2 mb-3 ">
                 <div class="fw-bold mb-2">Điều khoản</div>
                 <div class="small mb-1"><a href="#" class="text-dark text-decoration-none ">Chính sách</a>
                 </div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <!-- Contact & Social -->
-            <div class="col-12 col-lg-4 mb-3 d-flex flex-column  align-items-lg-start">
+            <div class="col-6 col-lg-3 mb-3  ">
                 <div class="fw-bold mb-2">Email</div>
                 <div class="small mb-1 ">admin@otod.vn</div>
                 <div class="fw-bold mb-2 mt-3">Điện thoại</div>

@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light btn-light shadow-sm px-4">
+    <nav class="navbar navbar-expand-lg navbar-light btn-light shadow-sm px-2">
         <div class="container" style="max-width: 100%;">
             <!-- Logo -->
             <a class="navbar-brand me-4" href="<?php echo e(route('home')); ?>">
@@ -28,7 +28,7 @@
                         <a class="nav-link" href="<?php echo e(route('home')); ?>">Tin tức</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('home')); ?>">Trở thành chủ xe</a>
+                        <a class="nav-link" href="<?php echo e(route('verification')); ?>">Trở thành chủ xe</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('home')); ?>">Carzip</a>
