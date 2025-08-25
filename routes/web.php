@@ -78,6 +78,26 @@ Route::get('/car-confirm-return', function () {
     return view('car-confirm-return');
 })->name('car-confirm-return');
 
+// Car Detail Route == Pending Review
+Route::get('/pending-review', function () {
+    return view('pending-review');
+})->name('pending-review');
+
+// Car Detail Route == Rejected
+Route::get('/rejected', function () {
+    return view('rejected');
+})->name('rejected');
+
+// Car Detail Route == Completed
+Route::get('/completed', function () {
+    return view('completed');
+})->name('completed');
+
+// Car Detail Route == On the Way
+Route::get('/on-the-way', function () {
+    return view('on-the-way');
+})->name('on-the-way');
+
 // Demo Routes
 Route::prefix('demo')->group(function () {
     Route::get('/bootstrap', [HomeController::class, 'bootstrap'])->name('demo.bootstrap');
