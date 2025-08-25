@@ -98,6 +98,11 @@ Route::get('/on-the-way', function () {
     return view('on-the-way');
 })->name('on-the-way');
 
+// Referral Route
+Route::get('/refer', function () {
+    return view('refer');
+})->name('refer');
+
 // Demo Routes
 Route::prefix('demo')->group(function () {
     Route::get('/bootstrap', [HomeController::class, 'bootstrap'])->name('demo.bootstrap');
