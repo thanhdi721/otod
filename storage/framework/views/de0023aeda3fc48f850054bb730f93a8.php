@@ -39,10 +39,11 @@
                     </button>
 
                     <!-- Secondary Button: Advanced Search -->
-                    <button class="btn btn-outline-primary fw-bold px-4 py-3 rounded"
+                    <a href="<?php echo e(route('search-higher')); ?>"
+                        class="btn btn-outline-primary fw-bold px-4 py-3 rounded text-decoration-none d-flex align-items-center justify-content-center"
                         style="min-width: 160px;border:solid 1px #2B4896;height:78px">
                         Tìm kiếm nâng cao
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -82,10 +83,11 @@
                 </button>
 
                 <!-- Secondary Button: Advanced Search -->
-                <button class="btn btn-outline-primary fw-bold py-3 rounded w-100"
+                <a href="<?php echo e(route('search-higher')); ?>"
+                    class="btn btn-outline-primary fw-bold py-3 rounded w-100 text-decoration-none d-flex align-items-center justify-content-center"
                     style="border:solid 1px #2B4896;height:68px">
                     Tìm kiếm nâng cao
-                </button>
+                </a>
             </div>
         </div>
     </div>
