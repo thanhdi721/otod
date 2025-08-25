@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Search Higher - Laravel Demo Application'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -304,34 +306,100 @@
             <div class="filter-section mb-4">
                 <h6 class="fw-bold text-dark mb-3 ">Mẫu xe</h6>
                 <div class="model-list" style="scrollbar-width: none; -ms-overflow-style: none;">
-                    <div class="model-item">
-                        <input type="checkbox" id="selectAll" class="form-check-input" onchange="toggleSelectAll()">
+                    <div class="model-item d-flex align-items-center justify-content-between">
                         <label for="selectAll" class="form-check-label ms-2">Chọn tất cả (20)</label>
+                        <input type="checkbox" id="selectAll" class="form-check-input"
+                            onchange="toggleSelectAll()"style="margin-left: auto;">
                     </div>
-                    <div class="model-item">
-                        <input type="checkbox" id="almera1" class="form-check-input model-checkbox"
-                            onchange="updateSelectAll()">
+                    <div class="model-item d-flex align-items-center justify-content-between">
                         <label for="almera1" class="form-check-label ms-2">Almera</label>
+                        <input type="checkbox" id="almera1" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
                     </div>
-                    <div class="model-item">
-                        <input type="checkbox" id="almera2" class="form-check-input model-checkbox"
-                            onchange="updateSelectAll()">
+                    <div class="model-item d-flex align-items-center justify-content-between">
                         <label for="almera2" class="form-check-label ms-2">Almera</label>
+                        <input type="checkbox" id="almera2" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()"style="margin-left: auto;">
                     </div>
-                    <div class="model-item">
-                        <input type="checkbox" id="almera3" class="form-check-input model-checkbox"
-                            onchange="updateSelectAll()">
+                    <div class="model-item d-flex align-items-center justify-content-between">
                         <label for="almera3" class="form-check-label ms-2">Almera</label>
+                        <input type="checkbox" id="almera3" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()"style="margin-left: auto;">
                     </div>
-                    <div class="model-item">
-                        <input type="checkbox" id="almera4" class="form-check-input model-checkbox"
-                            onchange="updateSelectAll()">
+                    <div class="model-item d-flex align-items-center justify-content-between">
                         <label for="almera4" class="form-check-label ms-2">Almera</label>
+                        <input type="checkbox" id="almera4" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()"style="margin-left: auto;">
                     </div>
-                    <div class="model-item">
-                        <input type="checkbox" id="almera5" class="form-check-input model-checkbox"
-                            onchange="updateSelectAll()">
+                    <div class="model-item d-flex align-items-center justify-content-between">
                         <label for="almera5" class="form-check-label ms-2">Almera</label>
+                        <input type="checkbox" id="almera5" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()"style="margin-left: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="filter-section mb-4">
+                <h6 class="fw-bold text-dark mb-3 ">Loại xe</h6>
+                <div class="model-list" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="selectAll" class="form-check-label ms-2">Chọn tất cả (20)</label>
+                        <input type="checkbox" id="selectAll" class="form-check-input" onchange="toggleSelectAll()"
+                            style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="sotudong1" class="form-check-label ms-2">Số tự động</label>
+                        <input type="checkbox" id="sotudong1" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="sotudong2" class="form-check-label ms-2">Số tự động</label>
+                        <input type="checkbox" id="sotudong2" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="filter-section mb-4">
+                <h6 class="fw-bold text-dark mb-3 ">Nhiên liệu</h6>
+                <div class="model-list" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="selectAll" class="form-check-label ms-2">Chọn tất cả (20)</label>
+                        <input type="checkbox" id="selectAll" class="form-check-input" onchange="toggleSelectAll()"
+                            style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="dongco1" class="form-check-label ms-2">Động cơ máy dầu</label>
+                        <input type="checkbox" id="dongco1" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="dongco2" class="form-check-label ms-2">Động cơ máy điện</label>
+                        <input type="checkbox" id="dongco2" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="dongco3" class="form-check-label ms-2">Động cơ xăng</label>
+                        <input type="checkbox" id="dongco3" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="filter-section mb-4">
+                <h6 class="fw-bold text-dark mb-3 ">Khu vực xe</h6>
+                <div class="model-list" style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="selectAll" class="form-check-label ms-2">Chọn tất cả (20)</label>
+                        <input type="checkbox" id="selectAll" class="form-check-input" onchange="toggleSelectAll()"
+                            style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="quan1" class="form-check-label ms-2">Quận 1</label>
+                        <input type="checkbox" id="quan1" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
+                    </div>
+                    <div class="model-item d-flex align-items-center justify-content-between">
+                        <label for="quan2" class="form-check-label ms-2">Quận 2</label>
+                        <input type="checkbox" id="quan2" class="form-check-input model-checkbox"
+                            onchange="updateSelectAll()" style="margin-left: auto;">
                     </div>
                 </div>
             </div>

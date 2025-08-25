@@ -20,7 +20,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Car Detail Route
 Route::get('/car-detail', function () {
     return view('car-detail');
-})->name('car.detail');
+})->name('car-detail');
+
 
 // Payment Route
 Route::get('/payment', function () {
@@ -41,6 +42,41 @@ Route::get('/search-higher', function () {
 Route::get('/search-result', function () {
     return view('search-result');
 })->name('search-result');
+
+// Car Rental History Route
+Route::get('/car-rental-history', function () {
+    return view('car-rental-history');
+})->name('car-rental-history');
+
+// Car Prepare Route
+Route::get('/car-prepare', function () {
+    return view('car-prepare');
+})->name('car-prepare');
+
+// Car Exterior Photos Prepare
+Route::get('/car-exterior-photos', function () {
+    return view('car-exterior-photos');
+})->name('car-exterior-photos');
+
+// Car Confirm Prepare Route
+Route::get('/car-confirm-prepare', function () {
+    return view('car-confirm-prepare');
+})->name('car-confirm-prepare');
+
+// Car Return Route
+Route::get('/car-return', function () {
+    return view('car-return');
+})->name('car-return');
+
+// Car Exterior Photos Return Route
+Route::get('/car-exterior-photos-return', function () {
+    return view('car-exterior-photos-return');
+})->name('car-exterior-photos-return');
+
+// Car Confirm Prepare Route
+Route::get('/car-confirm-return', function () {
+    return view('car-confirm-return');
+})->name('car-confirm-return');
 
 // Demo Routes
 Route::prefix('demo')->group(function () {
