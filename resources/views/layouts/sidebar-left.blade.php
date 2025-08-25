@@ -84,7 +84,7 @@
         </a>
 
         <!-- Referral Code -->
-        <a href="#" class="menu-item">
+        <a href="/refer" class="menu-item">
             <div class="menu-item-content">
                 <img src="{{ asset('/assets/images/refer-ic.png') }}" alt="">
                 <span class="menu-text">Mã giới thiệu</span>
