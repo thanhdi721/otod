@@ -294,15 +294,14 @@
 
                                     <!-- Action Button -->
                                     <div class="action-button d-none d-lg-block">
-                                        <a href="{{ route('car-detail') }}?status=completed"
-                                            style="text-decoration: none"
+                                        <a href="{{ route('completed') }}" style="text-decoration: none"
                                             class="btn-primary-for-otod rounded fw-bold px-4 py-2">
                                             Thuê lại
                                         </a>
                                     </div>
                                 </div>
                                 <div class="action-button d-block d-lg-none mt-3">
-                                    <a href="{{ route('car-detail') }}?status=completed"
+                                    <a href="{{ route('completed') }}"
                                         class="btn-primary-for-otod rounded fw-bold px-4 py-2 w-100"
                                         style="height:44px;text-decoration: none">
                                         Thuê lại
@@ -360,14 +359,14 @@
 
                                     <!-- Action Button -->
                                     <div class="action-button d-none d-lg-block">
-                                        <a href="{{ route('car-detail') }}?status=rejected" style="text-decoration: none"
+                                        <a href="{{ route('rejected') }}" style="text-decoration: none"
                                             class="btn-primary-for-otod rounded fw-bold px-4 py-2">
                                             Thuê lại
                                         </a>
                                     </div>
                                 </div>
                                 <div class="action-button d-block d-lg-none mt-3">
-                                    <a href="{{ route('car-detail') }}?status=rejected"
+                                    <a href="{{ route('rejected') }}"
                                         class="btn-primary-for-otod rounded fw-bold px-4 py-2 w-100"
                                         style="height:44px;text-decoration: none">
                                         Thuê lại
@@ -429,8 +428,7 @@
                                             class="bg-warning rounded fw-bold px-4 py-2">
                                             Đánh giá
                                         </a>
-                                        <a href="{{ route('car-detail') }}?status=pending_review"
-                                            style="text-decoration: none"
+                                        <a href="{{ route('pending-review') }}" style="text-decoration: none"
                                             class="btn-primary-for-otod rounded fw-bold px-4 py-2">
                                             Thuê lại
                                         </a>
@@ -441,7 +439,7 @@
                                         class="bg-warning-for-otod rounded fw-bold px-4 py-2 ">
                                         Đánh giá
                                     </a>
-                                    <a href="{{ route('car-detail') }}?status=pending_review"
+                                    <a href="{{ route('pending-review') }}"
                                         class="btn-primary-for-otod rounded fw-bold px-4 py-2 "
                                         style="height:44px;text-decoration: none">
                                         Thuê lại
