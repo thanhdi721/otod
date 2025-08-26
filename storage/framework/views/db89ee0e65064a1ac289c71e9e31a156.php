@@ -31,11 +31,11 @@
             <!-- Tab Navigation -->
             <div class="tab-navigation mb-4">
                 <div class="nav nav-tabs border-0" id="rentalHistoryTabs" role="tablist">
-                    <button class="nav-link active fw-bold px-4 py-3 me-3 rounded-4 w-100" style="max-width:110px"
+                    <button class="nav-link active fw-bold px-3 py-1 me-3 rounded-4 w-100" style="max-width:110px"
                         id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab">
                         Sắp đi
                     </button>
-                    <button class="nav-link fw-bold px-4 py-3 rounded-4 w-100" style="max-width:110px" id="completed-tab"
+                    <button class="nav-link fw-bold px-3 py-1 rounded-4 w-100" style="max-width:110px" id="completed-tab"
                         data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab">
                         Đã đi
                     </button>

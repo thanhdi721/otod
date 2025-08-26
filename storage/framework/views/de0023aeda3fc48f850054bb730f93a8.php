@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Search - Laravel Demo Application'); ?>
 
 <?php $__env->startSection('content'); ?>

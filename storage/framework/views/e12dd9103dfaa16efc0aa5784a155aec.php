@@ -28,7 +28,7 @@
                         <a class="nav-link" href="<?php echo e(route('home')); ?>">Tin tức</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('home')); ?>">Trở thành chủ xe</a>
+                        <a class="nav-link" href="<?php echo e(route('verification')); ?>">Trở thành chủ xe</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('home')); ?>">Carzip</a>

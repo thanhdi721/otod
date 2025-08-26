@@ -16,8 +16,6 @@
                     <div class="progress-bar-refer"></div>
                 </div>
 
-
-
                 <!-- Box mã giới thiệu -->
                 <div class="d-flex align-items-center justify-content-center bg-warning bg-opacity-10 p-3 rounded-3 mb-3">
                     <div class="d-flex flex-column justify-content-center align-items-center">
