@@ -21,7 +21,7 @@
         </a>
 
         <!-- Favorites -->
-        <a href="#" class="menu-item">
+        <a href="/favorites" class="menu-item">
             <div class="menu-item-content">
                 <img src="<?php echo e(asset('/assets/images/fav-ic.png')); ?>" alt="">
                 <span class="menu-text">Yêu thích</span>
@@ -75,7 +75,7 @@
         </a>
 
         <!-- Language -->
-        <a href="#" class="menu-item">
+        <a href="<?php echo e(route('language.selection')); ?>" class="menu-item">
             <div class="menu-item-content">
                 <img src="<?php echo e(asset('/assets/images/tran-ic.png')); ?>" alt="">
                 <span class="menu-text">Ngôn ngữ</span>

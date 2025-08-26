@@ -4,7 +4,6 @@
 
 @section('content')
     <div class="container w-100" style="margin-left: auto; max-width: 800px">
-        <div class="card border-0 shadow-sm rounded-3 p-4">
             <h5 class="fw-bold mb-3">Mã giới thiệu</h5>
 
             {{-- Box mã giới thiệu --}}
@@ -41,7 +40,7 @@
             <div class="mb-4">
                 <div class="fw-bold">Quà dành cho bạn</div>
                 <small class="text-muted d-block mb-2">Nhận ngay ưu đãi khi bạn bè đăng ký tài khoản thành công</small>
-                <div class="d-flex align-items-center border rounded-3 p-3">
+                <div class="d-flex align-items-center rounded-3 p-3">
                     <div>
                         <img src="{{ asset('/assets/images/voucher-refer.png') }}" alt="Gift Box" style="">
                     </div>
@@ -57,7 +56,7 @@
             <div>
                 <div class="fw-bold">Quà dành cho bạn bè</div>
                 <small class="text-muted d-block mb-2">Nhận ngay ưu đãi khi bạn bè đăng ký tài khoản thành công</small>
-                <div class="d-flex align-items-center border rounded-3 p-3">
+                <div class="d-flex align-items-center rounded-3 p-3">
                     <div>
                         <img src="{{ asset('/assets/images/voucher-refer.png') }}" alt="Gift Box" style="">
                     </div>
