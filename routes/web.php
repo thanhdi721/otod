@@ -146,10 +146,37 @@ Route::get('/content-detail', function () {
     ];
 
     return view('content-detail', compact('article'));
-})->name('content.detail');  // Profile page
+})->name('content.detail');
+// Profile page
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
+
+// Dashboard Owner Route
+Route::get('/dashboard-owner', function () {
+    return view('dashboard-owner');
+})->name('dashboard-owner');
+
+// Car List Route
+Route::get('/car-list', function () {
+    return view('car-list');
+})->name('car-list');
+
+// Add New Car Route
+Route::get('/add-new-car', function () {
+    return view('add-new-car');
+})->name('add-new-car');
+
+// Check Settings Route
+Route::get('/check-settings', function () {
+    return view('check-settings');
+})->name('check-settings');
+
+// Introduction Route
+Route::get('/introduction', function () {
+    return view('introduction');
+})->name('introduction');
+
 // Demo Routes
 Route::prefix('demo')->group(function () {
     Route::get('/bootstrap', [HomeController::class, 'bootstrap'])->name('demo.bootstrap');

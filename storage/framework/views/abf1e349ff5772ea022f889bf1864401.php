@@ -2,95 +2,51 @@
 <div class="sidebar-left d-none d-lg-block">
     <!-- Main Menu Card -->
     <div class="sidebar-menu-card">
-        <!-- Personal Information -->
-        <a href="/profile" class="menu-item">
+        <!-- Dashboard -->
+        <a href="/dashboard-owner" class="menu-item">
             <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/profile-ic.png')); ?>" alt="">
-                <span class="menu-text">Thông tin cá nhân</span>
+                <img src="<?php echo e(asset('/assets/images/home-ic.png')); ?>" alt="">
+                <span class="menu-text">Dashboard</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
         </a>
 
-        <!-- Car Rental History -->
-        <a href="/car-rental-history" class="menu-item">
+        <!-- List Cars -->
+        <a href="/car-list" class="menu-item">
             <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/history-ic.png')); ?>" alt="">
-                <span class="menu-text">Lịch sử thuê xe</span>
+                <img src="<?php echo e(asset('/assets/images/car-list-ic.png')); ?>" alt="">
+                <span class="menu-text">Danh sách xe</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
         </a>
 
-        <!-- Favorites -->
+        <!-- Order -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/fav-ic.png')); ?>" alt="">
-                <span class="menu-text">Yêu thích</span>
+                <img src="<?php echo e(asset('/assets/images/order-ic.png')); ?>" alt="">
+                <span class="menu-text">Đơn hàng</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
         </a>
 
-        <!-- Discount Codes & Gifts -->
+        <!-- Look Up Fines -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/voucher-ic.png')); ?>" alt="">
-                <span class="menu-text">Mã giảm giá & quà tặng</span>
+                <img src="<?php echo e(asset('/assets/images/look-up-fines.png')); ?>" alt="">
+                <span class="menu-text">Tra cứu phạt nguội</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
         </a>
 
-        <!-- Rent & Increase Income -->
+        <!-- VETC -->
         <a href="#" class="menu-item">
             <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/finance-ic.png')); ?>" alt="">
-                <span class="menu-text">Cho thuê & tăng thu nhập</span>
+                <img src="<?php echo e(asset('/assets/images/vetc-ic.png')); ?>" alt="">
+                <span class="menu-text">VETC</span>
             </div>
             <i class="bi bi-chevron-right text-muted"></i>
         </a>
 
-        <!-- My Gifts -->
-        <a href="#" class="menu-item">
-            <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/gif-ic.png')); ?>" alt="">
-                <span class="menu-text">Quà của tôi</span>
-            </div>
-            <i class="bi bi-chevron-right text-muted"></i>
-        </a>
-
-        <!-- Information Verification -->
-        <a href="#" class="menu-item">
-            <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/success-ic.png')); ?>" alt="">
-                <span class="menu-text">Xác thực thông tin</span>
-            </div>
-            <i class="bi bi-chevron-right text-muted"></i>
-        </a>
-
-        <!-- Feedback -->
-        <a href="#" class="menu-item">
-            <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/chat-ic.png')); ?>" alt="">
-                <span class="menu-text">Góp ý</span>
-            </div>
-            <i class="bi bi-chevron-right text-muted"></i>
-        </a>
-
-        <!-- Language -->
-        <a href="#" class="menu-item">
-            <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/tran-ic.png')); ?>" alt="">
-                <span class="menu-text">Ngôn ngữ</span>
-            </div>
-            <i class="bi bi-chevron-right text-muted"></i>
-        </a>
-
-        <!-- Referral Code -->
-        <a href="/refer" class="menu-item">
-            <div class="menu-item-content">
-                <img src="<?php echo e(asset('/assets/images/refer-ic.png')); ?>" alt="">
-                <span class="menu-text">Mã giới thiệu</span>
-            </div>
-            <i class="bi bi-chevron-right text-muted"></i>
-        </a>
     </div>
 
     <!-- Logout Button -->
@@ -316,4 +272,4 @@
         }
     });
 </script>
-<?php /**PATH E:\otod\resources\views/layouts/sidebar-left.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\otod\resources\views/layouts/sidebar-left-owner.blade.php ENDPATH**/ ?>
