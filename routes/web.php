@@ -127,6 +127,11 @@ Route::get('/refer', function () {
     return view('refer');
 })->name('refer');
 
+// Favorites Route
+Route::get('/favorites', function () {
+    return view('favorites');
+})->name('favorites');
+
 // Notifications page
 Route::get('/notifications', function () {
     return view('notifications');
@@ -177,6 +182,11 @@ Route::get('/introduction', function () {
     return view('introduction');
 })->name('introduction');
 
+
+// Language Selection Route
+Route::get('/language-selection', function () {
+    return view('language-selection');
+})->name('language.selection');
 // Demo Routes
 Route::prefix('demo')->group(function () {
     Route::get('/bootstrap', [HomeController::class, 'bootstrap'])->name('demo.bootstrap');
@@ -207,4 +217,23 @@ Route::prefix('api')->group(function () {
             ]
         ]);
     })->name('api.table-data');
+
+    // Language API Routes
+    Route::post('/set-language', function () {
+        $language = request('language', 'vi');
+
+        // Validate language
+        if (!in_array($language, ['vi', 'en'])) {
+            return response()->json(['error' => 'Invalid language'], 400);
+        }
+
+        // Store in session
+        session(['language' => $language]);
+
+        return response()->json([
+            'success' => true,
+            'language' => $language,
+            'message' => 'Language preference saved successfully'
+        ]);
+    })->name('api.set-language');
 });
