@@ -182,6 +182,21 @@ Route::get('/introduction', function () {
     return view('introduction');
 })->name('introduction');
 
+// Look Up Fines Route
+Route::get('/look-up-fines', function () {
+    return view('look-up-fines');
+})->name('look-up-fines');
+
+// VETC Route
+Route::get('/vetc', function () {
+    return view('vetc');
+})->name('vetc');
+
+// Search Result Car Route
+Route::get('/search-result-car', function () {
+    return view('search-result-car');
+})->name('search-result-car');
+
 
 // Language Selection Route
 Route::get('/language-selection', function () {

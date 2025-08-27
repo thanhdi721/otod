@@ -30,7 +30,7 @@
         </a>
 
         <!-- Look Up Fines -->
-        <a href="#" class="menu-item">
+        <a href="/look-up-fines" class="menu-item">
             <div class="menu-item-content">
                 <img src="{{ asset('/assets/images/look-up-fines.png') }}" alt="">
                 <span class="menu-text">Tra cứu phạt nguội</span>
@@ -39,7 +39,7 @@
         </a>
 
         <!-- VETC -->
-        <a href="#" class="menu-item">
+        <a href="/vetc" class="menu-item">
             <div class="menu-item-content">
                 <img src="{{ asset('/assets/images/vetc-ic.png') }}" alt="">
                 <span class="menu-text">VETC</span>
