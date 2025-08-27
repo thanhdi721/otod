@@ -177,6 +177,11 @@ Route::get('/check-settings', function () {
     return view('check-settings');
 })->name('check-settings');
 
+// Update Schedule Car Route
+Route::get('/update-schedule-car', function () {
+    return view('update-schedule-car');
+})->name('update-schedule-car');
+
 // Introduction Route
 Route::get('/introduction', function () {
     return view('introduction');

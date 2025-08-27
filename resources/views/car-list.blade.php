@@ -136,7 +136,9 @@
                         @if ($car['status'] === 'renting')
                             <hr style="margin: 0.5rem 0 !important">
                             <div class="d-flex justify-content-end">
-                                <button class="btn-update-info-car fw-medium">Cập nhật lịch xe</button>
+                                <a href="{{ route('update-schedule-car') }}"
+                                    class="btn-update-info-car text-decoration-none fw-medium">Cập nhật
+                                    lịch xe</a>
                             </div>
                         @endif
                     </div>
@@ -217,6 +219,8 @@
         border-radius: 0.375rem;
         padding: 0.5rem 1rem;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
     }
 
     .btn-update-info-car:hover {
@@ -254,6 +258,27 @@
                     toast.remove();
                 }, 4000);
                 sessionStorage.removeItem('carAddedSuccess');
+            }
+        } catch (e) {}
+
+        // Kiểm tra thông báo xóa xe thành công
+        try {
+            var deleteFlag = sessionStorage.getItem('carDeletedSuccess');
+            if (deleteFlag === '1') {
+                var toast = document.createElement('div');
+                toast.className = 'position-fixed';
+                toast.style.top = '16px';
+                toast.style.right = '16px';
+                toast.style.zIndex = '1080';
+                toast.innerHTML = '<div class="border border-success rounded-3 p-3" style="min-width:280px;background-color:#F0FDF5; box-shadow:0 4px 12px rgba(0,0,0,.08)">\
+                    <div class="fw-semibold mb-1" style="color:#198754">Thông báo</div>\
+                    <div class="text-muted">Xóa xe thành công</div>\
+                </div>';
+                document.body.appendChild(toast);
+                setTimeout(function() {
+                    toast.remove();
+                }, 4000);
+                sessionStorage.removeItem('carDeletedSuccess');
             }
         } catch (e) {}
     });
