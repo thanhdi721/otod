@@ -39,7 +39,7 @@
                 </ul>
                 <div class="d-none d-lg-flex align-items-center ms-4">
                     <a href="<?php echo e(route('search')); ?>" class="me-3 text-dark"><i class="bi bi-search fs-5"></i></a>
-                    <a href="#" class="me-3 text-dark position-relative">
+                    <a href="<?php echo e(route('notification')); ?>" class="me-3 text-dark position-relative">
                         <i class="bi bi-bell fs-5"></i>
                         <span
                             class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>

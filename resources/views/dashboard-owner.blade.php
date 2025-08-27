@@ -1,10 +1,19 @@
 @extends('layouts.layout-with-sidebar-owner')
 
 @section('content')
+    <!-- Notification -->
+    @if (request()->get('notification') == 'car_ready')
+        <div class="notification-box" id="notificationBox">
+            <div class="notification-content">
+                <div class="notification-title fw-bold">Thông báo</div>
+                <div class="notification-message">Xe của bạn đã sẵn sàng cho thuê</div>
+            </div>
+        </div>
+    @endif
     <div class="container w-100" style="margin-left: auto; max-width: 800px">
         <!-- Page Header -->
-        <div class="page-header mb-2 mb-lg-4 mt-2 mt-lg-5">
-            <h1 class="page-title fw-bold text-dark mb-0">Ví chủ xe</h1>
+        <div class="mb-2">
+            <span class="fs-3 fs-md-2 fs-lg-1 fw-bold text-dark mb-0">Ví chủ xe</span>
         </div>
         <!-- Wallet Summary Card -->
         <div class=" wallet-summary-card border-0">
@@ -124,4 +133,81 @@
         </div>
 
     </div>
+    <script>
+        // Auto hide notification after 5 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const notificationBox = document.getElementById('notificationBox');
+            if (notificationBox) {
+                setTimeout(function() {
+                    notificationBox.style.animation = 'slideOutRight 0.5s ease-out';
+                    setTimeout(function() {
+                        notificationBox.style.display = 'none';
+                    }, 500);
+                }, 5000);
+            }
+        });
+    </script>
+    <style>
+        /* Notification Styles */
+        .notification-box {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #f8fff8;
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            padding: 1rem;
+            animation: slideInRight 0.5s ease-out;
+            z-index: 1000;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .notification-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .notification-title {
+            font-size: 1rem;
+            color: #155724;
+        }
+
+        .notification-message {
+            font-size: 0.9rem;
+            color: #155724;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .notification-box {
+                top: 80px;
+                right: 15px;
+            }
+        }
+    </style>
 @endsection
