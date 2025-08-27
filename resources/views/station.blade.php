@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container w-100 mt-4" style="max-width: 800px">
+        <!-- Header Page -->
+        <div class="d-flex justify-content-start align-items-center mb-4">
+            <h1 class="fw-bold fs-lg-6 fs-md-5 fs-4 mb-0">Trạm xe</h1>
+        </div>
         <!-- Header Banner -->
         <div class="position-relative">
             <div class="banner-container">
