@@ -21,7 +21,7 @@
         </a>
 
         <!-- Order -->
-        <a href="#" class="menu-item">
+        <a href="/orders" class="menu-item">
             <div class="menu-item-content">
                 <img src="<?php echo e(asset('/assets/images/order-ic.png')); ?>" alt="">
                 <span class="menu-text">Đơn hàng</span>

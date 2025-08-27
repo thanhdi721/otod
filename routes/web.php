@@ -207,6 +207,15 @@ Route::get('/station', function () {
     return view('station');
 })->name('station');
 
+// Oders Route
+Route::get('/orders', function () {
+    return view('orders');
+})->name('orders');
+
+// Order Detail Route
+Route::get('/order-detail', function () {
+    return view('order-detail');
+})->name('order-detail');
 
 // Language Selection Route
 Route::get('/language-selection', function () {
