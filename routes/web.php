@@ -217,6 +217,26 @@ Route::get('/order-detail', function () {
     return view('order-detail');
 })->name('order-detail');
 
+// Car Confirm Prepare Owner Route
+Route::get('/car-confirm-prepare-owner', function () {
+    return view('car-confirm-prepare-owner');
+})->name('car-confirm-prepare-owner');
+
+// Car Prepare Owner Route
+Route::get('/car-prepare-owner', function () {
+    return view('car-prepare-owner');
+})->name('car-prepare-owner');
+
+// Car Exterior Photos Prepare Owner Route
+Route::get('/car-exterior-photos-prepare-owner', function () {
+    return view('car-exterior-photos-prepare-owner');
+})->name('car-exterior-photos-prepare-owner');
+
+// Notification Route
+Route::get('/notification', function () {
+    return view('notification');
+})->name('notification');
+
 // Language Selection Route
 Route::get('/language-selection', function () {
     return view('language-selection');

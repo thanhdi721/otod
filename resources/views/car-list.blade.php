@@ -4,7 +4,7 @@
     <div class="container w-100" style="margin-left: auto; max-width: 800px">
         <!-- Page Header -->
         <div class="page-header mb-2 mb-lg-4 mt-2 mt-lg-5">
-            <h1 class="page-title fw-bold text-dark mb-0">Danh sách xe</h1>
+            <h1 class="page-title fs-3 fs-md-2 fs-lg-1 fw-bold text-dark mb-0">Danh sách xe</h1>
         </div>
 
         @php
