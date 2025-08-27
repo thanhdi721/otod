@@ -202,6 +202,11 @@ Route::get('/search-result-car', function () {
     return view('search-result-car');
 })->name('search-result-car');
 
+// Station Route
+Route::get('/station', function () {
+    return view('station');
+})->name('station');
+
 
 // Language Selection Route
 Route::get('/language-selection', function () {
