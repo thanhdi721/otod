@@ -1,12 +1,12 @@
-@extends('layouts.app')
 
-@section('title', 'Điều khoản')
 
-@section('content')
+<?php $__env->startSection('title', 'Điều khoản'); ?>
+
+<?php $__env->startSection('content'); ?>
     <div class="container mt-4" style="max-width: 920px">
         <!-- Hero Banner -->
         <div class="position-relative mb-4">
-            <img src="{{ asset('/assets/images/clause-banner.jpg') }}" alt="Banner" class="w-100 rounded-3 object-fit-cover"
+            <img src="<?php echo e(asset('/assets/images/clause-banner.jpg')); ?>" alt="Banner" class="w-100 rounded-3 object-fit-cover"
                 style="height: 347px;">
             <div class="position-absolute bottom-0 start-0 translate-middle-y text-white px-4">
                 <h1 class="fw-bold m-0" style="text-shadow:0 2px 6px rgba(0,0,0,.4)">Điều khoản</h1>
@@ -1526,4 +1526,6 @@
 
         })();
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\otod\resources\views/clause.blade.php ENDPATH**/ ?>
