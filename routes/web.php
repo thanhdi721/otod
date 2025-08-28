@@ -256,6 +256,16 @@ Route::get('/notification', function () {
     return view('notification');
 })->name('notification');
 
+// Car Zip Route
+Route::get('/car-zip', function () {
+    return view('car-zip');
+})->name('car-zip');
+
+// Clause Route
+Route::get('/clause', function () {
+    return view('clause');
+})->name('clause');
+
 // Language Selection Route
 Route::get('/language-selection', function () {
     return view('language-selection');

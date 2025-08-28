@@ -31,7 +31,7 @@
                         <a class="nav-link" href="{{ route('verification') }}">Trở thành chủ xe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Carzip</a>
+                        <a class="nav-link" href="{{ route('car-zip') }}">Carzip</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Liên hệ</a>
