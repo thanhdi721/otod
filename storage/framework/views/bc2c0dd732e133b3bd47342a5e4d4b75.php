@@ -28,7 +28,7 @@
                     </div>
                     <div class="card-text mt-auto fw-bold fs-3 fs-md-2 fs-lg-1" style="color:#16A350">1.250.000đ</div>
                 </div>
-                <div class="d-flex w-100 gap-3 justify-content-between mt-4">
+                <div class="d-flex w-100 gap-3 justify-content-between mt-4 mb-3">
                     <div class="d-flex justify-content-start gap-2 p-3 align-items-center w-100 rounded"
                         style="background:#2B4896; color: white; height:72px">
                         <img src="<?php echo e(asset('/assets/images/wallet-w.png')); ?>" alt="">
@@ -46,9 +46,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-4" style="color:#2B4896">
+                <a href="<?php echo e(route('tax-info')); ?>" class="mt-4 text-decoration-none" style="color:#2B4896">
                     Thông tin khai thuế chủ xe
-                </div>
+                </a>
             </div>
         </div>
         <!-- Order Overview -->

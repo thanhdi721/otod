@@ -266,6 +266,21 @@ Route::get('/clause', function () {
     return view('clause');
 })->name('clause');
 
+// Detail Wallet Route
+Route::get('/detail-wallet', function () {
+    return view('detail-wallet');
+})->name('detail-wallet');
+
+// Cash Out Route
+Route::get('/cash-out', function () {
+    return view('cash-out');
+})->name('cash-out');
+
+// Tax Info Route
+Route::get('/tax-info', function () {
+    return view('tax-info');
+})->name('tax-info');
+
 // Language Selection Route
 Route::get('/language-selection', function () {
     return view('language-selection');
