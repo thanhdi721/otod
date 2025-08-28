@@ -30,7 +30,7 @@
         </a>
 
         <!-- Discount Codes & Gifts -->
-        <a href="#" class="menu-item">
+        <a href="<?php echo e(route('discounts-and-gifts')); ?>" class="menu-item">
             <div class="menu-item-content">
                 <img src="<?php echo e(asset('/assets/images/voucher-ic.png')); ?>" alt="">
                 <span class="menu-text">Mã giảm giá & quà tặng</span>

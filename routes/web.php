@@ -33,6 +33,25 @@ Route::get('/search-detail', function () {
     return view('search');
 })->name('search');
 
+// Discounts and Gifts Route
+Route::get('/discounts-and-gifts', function () {
+    return view('discounts-and-gifts');
+})->name('discounts-and-gifts');
+
+// Discount Codes Detail Route
+Route::get('/discount-codes', function () {
+    return view('discount-codes');
+})->name('discount-codes');
+
+// Discount Code Detail Route
+Route::get('/discount-code-detail/{id?}', function ($id = 1) {
+    return view('discount-code-detail', compact('id'));
+})->name('discount-code-detail');
+
+// Gifts Detail Route
+Route::get('/gifts', function () {
+    return view('gifts');
+})->name('gifts');
 // Search Higher Route
 Route::get('/search-higher', function () {
     return view('search-higher');
