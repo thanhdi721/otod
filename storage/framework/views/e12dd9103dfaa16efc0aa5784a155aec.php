@@ -31,7 +31,7 @@
                         <a class="nav-link" href="<?php echo e(route('verification')); ?>">Trở thành chủ xe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('home')); ?>">Carzip</a>
+                        <a class="nav-link" href="<?php echo e(route('car-zip')); ?>">Carzip</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('home')); ?>">Liên hệ</a>
