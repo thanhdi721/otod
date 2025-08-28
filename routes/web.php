@@ -281,6 +281,36 @@ Route::get('/tax-info', function () {
     return view('tax-info');
 })->name('tax-info');
 
+// Register Route
+Route::get('/register', function () {
+    return view('Auth.register');
+})->name('register');
+
+// Login Route
+Route::get('/login', function () {
+    return view('Auth.login');
+})->name('login');
+
+// Create Password Route
+Route::get('/create-new-password', function () {
+    return view('Auth.create-new-password');
+})->name('create-new-password');
+
+// Forgot Password Route
+Route::get('/forgot-password', function () {
+    return view('Auth.forgot-password');
+})->name('forgot-password');
+
+// Verify OTP Register Route
+Route::get('/verify-otp-register', function () {
+    return view('Auth.verify-otp-register');
+})->name('verify-otp-register');
+
+// Verify OTP Forgot Password Route
+Route::get('/verify-otp-forgot-password', function () {
+    return view('Auth.verify-otp-forgot-password');
+})->name('verify-otp-forgot-password');
+
 // Language Selection Route
 Route::get('/language-selection', function () {
     return view('language-selection');
