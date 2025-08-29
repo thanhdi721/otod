@@ -13,8 +13,8 @@
                     <span
                         class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
                 </a>
-                <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainMenu">
+                <!-- Open right drawer on mobile instead of collapsing menu -->
+                <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileDrawer" aria-controls="mobileDrawer" aria-label="Open menu">
                     <span class="bi bi-list fs-3"></span>
                 </button>
             </div>
@@ -31,7 +31,7 @@
                         <a class="nav-link" href="<?php echo e(route('verification')); ?>">Trở thành chủ xe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('home')); ?>">Carzip</a>
+                        <a class="nav-link" href="<?php echo e(route('car-zip')); ?>">Carzip</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('home')); ?>">Liên hệ</a>
@@ -49,5 +49,22 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Mobile Drawer (right) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileDrawer" aria-labelledby="mobileDrawerLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title m-auto" id="mobileDrawerLabel">
+                <img src="<?php echo e(asset('/assets/images/Logo.png')); ?>" alt="Logo" style="height: 32px;">
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body px-0">
+            <?php if(request()->routeIs('home')): ?>
+                <?php echo $__env->make('layouts.drawer-home', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php else: ?>
+                <?php echo $__env->make('layouts.drawer-default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php endif; ?>
+        </div>
+    </div>
 </header>
 <?php /**PATH D:\Source Web\otod-github\otod\resources\views/layouts/header.blade.php ENDPATH**/ ?>

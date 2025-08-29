@@ -1,10 +1,10 @@
-@extends('layouts.app')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <div class="container w-100 mt-4" style="max-width: 605px">
         <!-- Header -->
         <div class="d-flex align-items-center mb-4">
-            <a href="{{ route('add-new-car') }}" class="text-decoration-none me-3">
+            <a href="<?php echo e(route('add-new-car')); ?>" class="text-decoration-none me-3">
                 <i class="bi bi-arrow-left fs-4 text-dark"></i>
             </a>
             <span class="mb-0 fw-bold text-dark fs-5 fs-md-3 fs-lg-2">Thêm xe mới</span>
@@ -16,11 +16,11 @@
         <!-- Image slider placeholder -->
         <div class="mb-3">
             <div class="position-relative border rounded-3 overflow-hidden">
-                <img src="{{ asset('/assets/images/check-settings-img.png') }}" class="w-100"
+                <img src="<?php echo e(asset('/assets/images/check-settings-img.png')); ?>" class="w-100"
                     style="max-height: 260px; object-fit: cover" alt="car">
                 <!-- Share icon (top-right) -->
                 <button type="button" class="btn btn-sm position-absolute" style="top:8px; right:8px; border-radius:50%">
-                    <img src="{{ asset('/assets/images/share-ic.png') }}" alt="share">
+                    <img src="<?php echo e(asset('/assets/images/share-ic.png')); ?>" alt="share">
                 </button>
                 <!-- Pagination dots + counter (bottom) -->
                 <div class="position-absolute w-100 d-flex justify-content-center" style="bottom: 12px; left:0;">
@@ -103,22 +103,22 @@
             <div class="fw-bold mb-2">Đặc điểm xe</div>
             <div class="row text-center g-3">
                 <div class="col-3">
-                    <img src="{{ asset('/assets/images/icon-transmission.png') }}" alt="" class="mb-2">
+                    <img src="<?php echo e(asset('/assets/images/icon-transmission.png')); ?>" alt="" class="mb-2">
                     <div class="text-muted small">Truyền động</div>
                     <div class="fw-semibold">Số sàn</div>
                 </div>
                 <div class="col-3">
-                    <img src="{{ asset('/assets/images/icon-seat.png') }}" alt="" class="mb-2">
+                    <img src="<?php echo e(asset('/assets/images/icon-seat.png')); ?>" alt="" class="mb-2">
                     <div class="text-muted small">Số ghế</div>
                     <div class="fw-semibold">4 chỗ</div>
                 </div>
                 <div class="col-3">
-                    <img src="{{ asset('/assets/images/icon-fuel.png') }}" alt="" class="mb-2">
+                    <img src="<?php echo e(asset('/assets/images/icon-fuel.png')); ?>" alt="" class="mb-2">
                     <div class="text-muted small">Nhiên liệu</div>
                     <div class="fw-semibold">Xăng</div>
                 </div>
                 <div class="col-3">
-                    <img src="{{ asset('/assets/images/icon-consumption.png') }}" alt="" class="mb-2">
+                    <img src="<?php echo e(asset('/assets/images/icon-consumption.png')); ?>" alt="" class="mb-2">
                     <div class="text-muted small">Tiêu hao</div>
                     <div class="fw-semibold">5L/100km</div>
                 </div>
@@ -142,36 +142,36 @@
             </div>
             <div class="row g-3">
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-19.png') }}" alt=""> Bản đồ</div>
+                        src="<?php echo e(asset('/assets/images/ic-19.png')); ?>" alt=""> Bản đồ</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-21.png') }}" alt=""> Bluetooth</div>
+                        src="<?php echo e(asset('/assets/images/ic-21.png')); ?>" alt=""> Bluetooth</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-24.png') }}" alt=""> Camera 360</div>
+                        src="<?php echo e(asset('/assets/images/ic-24.png')); ?>" alt=""> Camera 360</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-25.png') }}" alt=""> Camera cập lề</div>
+                        src="<?php echo e(asset('/assets/images/ic-25.png')); ?>" alt=""> Camera cập lề</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-26.png') }}" alt=""> Camera lùi</div>
+                        src="<?php echo e(asset('/assets/images/ic-26.png')); ?>" alt=""> Camera lùi</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-22.png') }}" alt=""> Cảm biến lốp</div>
+                        src="<?php echo e(asset('/assets/images/ic-22.png')); ?>" alt=""> Cảm biến lốp</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-27.png') }}" alt=""> Cảm biến va chạm</div>
+                        src="<?php echo e(asset('/assets/images/ic-27.png')); ?>" alt=""> Cảm biến va chạm</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-28.png') }}" alt=""> Cảnh báo tốc độ</div>
+                        src="<?php echo e(asset('/assets/images/ic-28.png')); ?>" alt=""> Cảnh báo tốc độ</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-29.png') }}" alt=""> Cửa sổ trời</div>
+                        src="<?php echo e(asset('/assets/images/ic-29.png')); ?>" alt=""> Cửa sổ trời</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-34.png') }}" alt=""> Định vị GPS</div>
+                        src="<?php echo e(asset('/assets/images/ic-34.png')); ?>" alt=""> Định vị GPS</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-30.png') }}" alt=""> Khe cắm USB</div>
+                        src="<?php echo e(asset('/assets/images/ic-30.png')); ?>" alt=""> Khe cắm USB</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-31.png') }}" alt=""> Lốp dự phòng</div>
+                        src="<?php echo e(asset('/assets/images/ic-31.png')); ?>" alt=""> Lốp dự phòng</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-20.png') }}" alt=""> Túi khí an toàn</div>
+                        src="<?php echo e(asset('/assets/images/ic-20.png')); ?>" alt=""> Túi khí an toàn</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-32.png') }}" alt=""> Màn hình DVD</div>
+                        src="<?php echo e(asset('/assets/images/ic-32.png')); ?>" alt=""> Màn hình DVD</div>
                 <div class="col-6 col-lg-4 d-flex align-items-center gap-3"><img
-                        src="{{ asset('/assets/images/ic-23.png') }}" alt=""> ETC</div>
-                <div class="col-12 d-flex align-items-center gap-2"><img src="{{ asset('/assets/images/ic-33.png') }}"
+                        src="<?php echo e(asset('/assets/images/ic-23.png')); ?>" alt=""> ETC</div>
+                <div class="col-12 d-flex align-items-center gap-2"><img src="<?php echo e(asset('/assets/images/ic-33.png')); ?>"
                         alt=""> Camera hành trình</div>
             </div>
         </div>
@@ -189,9 +189,9 @@
 
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay" style="display: none;">
-        <img src="{{ asset('/assets/images/loading-gif.webp') }}" alt="Loading" style="width: 3rem; height: 3rem;">
+        <img src="<?php echo e(asset('/assets/images/loading-gif.webp')); ?>" alt="Loading" style="width: 3rem; height: 3rem;">
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
 <style>
     @media (max-width: 768px) {
@@ -236,9 +236,11 @@
                     try {
                         sessionStorage.setItem('carAddedSuccess', '1');
                     } catch (e) {}
-                    window.location.href = "{{ route('car-list') }}";
+                    window.location.href = "<?php echo e(route('car-list')); ?>";
                 }, 2000);
             });
         }
     });
 </script>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Source Web\otod-github\otod\resources\views/check-settings.blade.php ENDPATH**/ ?>

@@ -1,22 +1,29 @@
-@extends('layouts.layout-not-header-footer')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay d-none">
-        <img src="{{ asset('/assets/images/loading-gif.webp') }}" alt="Loading" style="width: 3rem; height: 3rem;">
+        <img src="<?php echo e(asset('/assets/images/loading-gif.webp')); ?>" alt="Loading" style="width: 3rem; height: 3rem;">
     </div>
 
     <div class="container-fluid px-0">
         <div class="row g-0" style="height: 810px;">
             <!-- Left Hero -->
             <div class="col-12 col-lg-6 position-relative hero-section">
-                <img src="{{ asset('/assets/images/otp-img.png') }}" alt="banner" class="object-fit-cover hero-image">
-                <div class="position-absolute top-0 start-0 w-100 h-100"
-                    style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));"></div>
+                <img src="<?php echo e(asset('/assets/images/login-img.jpg')); ?>" alt="banner" class="object-fit-cover hero-image">
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-logo">
-                    <img src="{{ asset('/assets/images/logo-white2.png') }}" alt="OTOD" class="mb-4">
+                    <img src="<?php echo e(asset('/assets/images/logo-white2.png')); ?>" alt="OTOD" class="mb-4">
                 </div>
-
+                <div class="position-absolute bottom-0 start-0 p-4 p-lg-5 text-white hero-text" style="max-width: 540px;">
+                    <div class="d-flex hero-text-element justify-content-start gap-1 mb-2">
+                        <img src="<?php echo e(asset('/assets/images/pr-ic1.png')); ?>" alt="OTOD" class="pr-ic">
+                        <img src="<?php echo e(asset('/assets/images/pr-ic2.png')); ?>" alt="OTOD" class="pr-ic">
+                        <img src="<?php echo e(asset('/assets/images/pr-ic3.png')); ?>" alt="OTOD" class="pr-ic">
+                    </div>
+                    <div class="fs-3 fw-bold mb-2">Tự lái - Tự do</div>
+                    <div class="small text-white-50">Tự tay cầm lái chiếc xe bạn yêu thích cho hành trình thêm hứng khởi.
+                    </div>
+                </div>
             </div>
             <!-- Right Form -->
             <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
@@ -135,21 +142,24 @@
             }
 
             .hero-image {
-                height: 433px;
+                height: 328px;
             }
 
             .hero-logo {
                 text-align: start !important;
-                top: 50% !important;
-                left: 50% !important;
+                top: 40% !important;
+                left: 28% !important;
             }
 
             .hero-logo img {
                 height: 48px !important;
+                margin-bottom: 0px !important;
             }
 
             .hero-text {
                 margin-bottom: 20px !important;
+                padding-top: 0px !important;
+                bottom: 20px !important;
             }
 
             .hero-text-element {
@@ -241,10 +251,12 @@
 
                     // Simulate loading time then redirect
                     setTimeout(() => {
-                        window.location.href = '{{ route('login') }}';
+                        window.location.href = '<?php echo e(route('login')); ?>';
                     }, 2000);
                 }
             });
         })();
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.layout-not-header-footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Source Web\otod-github\otod\resources\views/Auth/verify-otp-register.blade.php ENDPATH**/ ?>

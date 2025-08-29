@@ -1,9 +1,7 @@
-
-
 <?php $__env->startSection('title', 'Chi tiết mã giảm giá - OTOD'); ?>
 
 <?php $__env->startSection('content'); ?>
-    <div class="container w-100" style="margin-left: auto; max-width: 800px">
+    <div class="container w-100">
         
         <div class="page-header d-flex align-items-center mb-4">
             <button class="btn-back" onclick="history.back()">
@@ -13,73 +11,137 @@
         </div>
 
         
-        <div class="banner-container mb-4">
-            <img src="<?php echo e(asset('/assets/images/voucher-refer.png')); ?>" alt="Katinat Banner" class="banner-image">
-            <div class="banner-overlay">
-                <div class="banner-content">
-                    <h3 class="banner-title">[Katinat] Thẻ quà tặng Matcha Latte 50.000đ</h3>
-                </div>
-            </div>
+        <div class="banner-container mb-3">
+            <img src="<?php echo e(asset('/assets/images/banner-codes.png')); ?>" alt="Katinat Banner" class="banner-image">
         </div>
 
-        
-        <div class="gift-card-info mb-4">
-            <div class="info-row">
-                <div class="info-item">
-                    <span class="info-label">Điểm</span>
-                    <div class="info-value">
-                        <i class="bi bi-star-fill text-warning"></i>
-                        <span>45 điểm</span>
+        <div class="container" style="max-width:680px;">
+            <div class="p-3 p-md-4">
+                <!-- Tiêu đề -->
+                <div class="mb-3">
+                    <div class="gift-title">[Katinat] Thẻ quà tặng Matcha Latte 50.000đ</div>
+                </div>
+
+                <!-- Hàng thông tin: Điểm & Hạn dùng -->
+                <div class="row mb-3">
+                    <div class="col-6 border-end">
+                        <div class="muted text-black fw-normal">Điểm</div>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="<?php echo e(asset('/assets/images/ic-poin.png')); ?>" alt="coin" class="coin-image">
+                            <span class="muted"><b class="text-black fw-normal">45</b> điểm</span>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="muted text-black fw-normal">Hạn dùng</div>
+                        <div class="muted"><b class="text-black fw-normal">30/06/2024</b></div>
                     </div>
                 </div>
-                <div class="info-item">
-                    <span class="info-label">Hạn dùng</span>
-                    <div class="info-value">30/06/2024</div>
+
+                <!-- Nút đổi quà -->
+                <div id="actionArea">
+                    <button type="button" class="btn btn-exchange w-100" onclick="openSuccessModal()">Đổi quà</button>
+                </div>
+
+                <!-- Modal: Đổi quà thành công -->
+                <div class="modal fade" id="exchangeSuccessModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content border-0 rounded-4 p-2 p-sm-3">
+                            <div class="modal-body text-center">
+                                <div class="success-icon mb-3 mx-auto d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-check-lg"></i>
+                                </div>
+                                <h5 class="fw-semibold mb-2">Đổi quà thành công</h5>
+                                <p class="text-muted mb-3 fs-6">
+                                    Quà sẽ được gửi vào mục "Quà của tôi". Vui lòng sử dụng quà trước <b>30/06/2024</b>
+                                </p>
+                                <div class="mb-4 fs-6">
+                                    <span class="text-muted">Số điểm còn lại:</span>
+                                    <img src="<?php echo e(asset('/assets/images/ic-poin.png')); ?>" alt="coin" class="coin-image align-text-bottom ms-1 me-1" style="width:16px;height:16px;" />
+                                    <b>319</b> <span class="text-muted">điểm</span>
+                                </div>
+                                <button id="btnAgreeExchange" type="button" class="btn btn-exchange w-100" data-bs-dismiss="modal">Đồng ý</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="
+                    align-self: stretch;
+                    padding-top: 16px;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    display: inline-flex;
+                "
+            >
+                <div
+                    style="
+                        align-self: stretch;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        padding-top: 8px;
+                        padding-bottom: 8px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        display: inline-flex;
+                    "
+                >
+                    <div style="flex: 1 1 0">
+                        <span
+                            style="
+                                color: var(--Text-Secordary, #737272);
+                                font-size: 14px;
+                                font-family: Be Vietnam Pro;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word;
+                            "
+                        >
+                            🎁 Hướng Dẫn Đổi Quà Trên Ứng Dụng OTOD<br />
+                        </span>
+                        <span
+                            style="
+                                color: var(--Text-Secordary, #737272);
+                                font-size: 14px;
+                                font-family: Be Vietnam Pro;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word;
+                            "
+                        >
+                            1. Mở ứng dụng OTOD, chọn mục "Mã giảm giá và quà tặng" tại trang cá nhân.<br />
+                            2. Duyệt qua các phần thưởng có sẵn và chọn món quà bạn muốn đổi.<br />
+                            3. Nhấn "Đổi quà", sau đó xác nhận sử dụng điểm OTOD Rewards.<br />
+                            4. Quà tặng sẽ được gửi vào mục "Quà của tôi". Bạn có thể sử dụng ngay hoặc lưu lại dùng sau.<br />
+                        </span>
+                        <span
+                            style="
+                                color: var(--Text-Secordary, #737272);
+                                font-size: 14px;
+                                font-family: Be Vietnam Pro;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word;
+                            "
+                        >
+                            ⏰ Lưu ý: Mỗi phần thưởng có thời hạn sử dụng khác nhau. Vui lòng kiểm tra kỹ trước khi đổi.<br />
+                            Chúc bạn đổi quà vui vẻ và nhận được nhiều ưu đãi hấp dẫn từ OTOD! 🌟
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        
-        <div class="exchange-button-container mb-4">
-            <button class="btn-exchange" onclick="exchangeGift()">
-                Đổi quà
-            </button>
-        </div>
-
-        
-        <div class="instruction-card">
-            <div class="instruction-icon">
-                <i class="bi bi-exclamation-triangle-fill text-warning"></i>
-            </div>
-            <div class="instruction-content">
-                <h6 class="instruction-title">Hướng Dẫn Đổi Quà Trên Ứng Dụng OTOD</h6>
-                <ol class="instruction-list">
-                    <li>Mở ứng dụng OTOD, chọn mục "Mã giảm giá và quà tặng" tại trang chủ nhân.</li>
-                    <li>Duyệt qua các phần thưởng có sẵn và chọn món quà bạn muốn đổi.</li>
-                    <li>Nhấn "Đổi quà", sau đó xác nhận để đổi điểm OTOD Rewards.</li>
-                    <li>Quà tặng sẽ được gửi qua mục "Sản cũa tôi". Sản cũa sẽ được lưu đây để bạn có thể sử dụng ngay hoặc lưu để dùng sau.</li>
-                    <li>Lưu ý: Mỗi phần thưởng chỉ tính hợp lệ đổi một lần duy nhất.</li>
-                </ol>
-            </div>
-        </div>
-
-        
-        <div class="terms-card">
-            <div class="terms-icon">
-                <i class="bi bi-info-circle-fill text-danger"></i>
-            </div>
-            <div class="terms-content">
-                <h6 class="terms-title">Lưu ý: Mỗi phần thưởng chỉ tính hợp lệ đổi một lần duy nhất. Vui lòng kiểm tra kỹ trước khi đổi.</h6>
-                <p class="terms-desc">Chúc bạn đổi quà vui vẻ và được nhiều ưu đãi hấp dẫn từ OTOD! :)</p>
-            </div>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('styles'); ?>
 <style>
-    /* Font import */
-    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
 
     /* Page header styles */
     .page-header {
@@ -114,7 +176,7 @@
         position: relative;
         border-radius: 16px;
         overflow: hidden;
-        height: 200px;
+       
     }
 
     .banner-image {
@@ -136,7 +198,7 @@
         color: white;
         font-size: 18px;
         font-weight: 600;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
         margin: 0;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
@@ -166,7 +228,7 @@
         color: #737272;
         font-size: 14px;
         font-weight: 500;
-        font-family: 'Be Vietnam Pro', sans-serif;
+       
     }
 
     .info-value {
@@ -176,7 +238,6 @@
         color: #0A0A0A;
         font-size: 16px;
         font-weight: 600;
-        font-family: 'Be Vietnam Pro', sans-serif;
     }
 
     /* Exchange Button Styles */
@@ -192,7 +253,7 @@
         padding: 16px 48px;
         font-size: 16px;
         font-weight: 600;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
         cursor: pointer;
         transition: all 0.3s ease;
         min-width: 200px;
@@ -233,7 +294,7 @@
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 12px;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
     }
 
     .instruction-list {
@@ -242,7 +303,7 @@
         color: #737272;
         font-size: 14px;
         line-height: 1.6;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
     }
 
     .instruction-list li {
@@ -278,7 +339,7 @@
         font-size: 14px;
         font-weight: 600;
         margin-bottom: 8px;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
         line-height: 1.4;
     }
 
@@ -287,15 +348,55 @@
         font-size: 14px;
         font-weight: 400;
         margin: 0;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
         line-height: 1.4;
     }
 
+    /* New styles for Bootstrap card layout */
+    .gift-card {
+        border: none;
+        box-shadow: 0 6px 24px rgba(0,0,0,.06);
+        border-radius: 14px;
+    }
+    .gift-title { font-weight: 800; font-size: 1.1rem; }
+    .muted { color:#6c757d; }
+    .v-divider { width:1px; background:#e9ecef; height:28px; margin:0 1rem; }
+    .btn-exchange { background:#284896; color:#fff; font-weight:700; border-radius:12px; padding:.9rem 1rem; }
+    .btn-exchange:hover { filter:brightness(.97); }
+
+    /* Success modal styles */
+    .success-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #E8F5E9;
+        color: #16A34A;
+        font-size: 24px;
+    }
+    .redeem-code-container {
+        border: 1px solid #E7E5E4;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .redeem-code-content {
+        padding: 16px;
+    }
+    /* Redeem code card */
+    .redeem-card {
+        background: #FFF3D6; /* full yellow background */
+        border-radius-top-left: 12px;
+        border-radius-top-right: 12px;
+        padding: 16px;
+    }
+    .redeem-header { color:#6B5E3C; font-size:14px; text-align:center; }
+    .redeem-code { color:#F5A623; font-weight:700; text-align:center; font-size:18px; letter-spacing: .5px; }
+    .redeem-copy { cursor:pointer; color:#F5A623; margin-left:6px; }
+    .barcode-box { height: 96px; margin: 12px auto 0; background: repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 5px); border-radius:4px; }
+    .redeem-note { color:#737272; font-size:13px; text-align:center; margin-top:12px; }
+
     /* Mobile responsive */
     @media (max-width: 768px) {
-        .banner-container {
-            height: 160px;
-        }
+       
 
         .banner-title {
             font-size: 16px;
@@ -331,9 +432,7 @@
     }
 
     @media (max-width: 576px) {
-        .banner-container {
-            height: 140px;
-        }
+       
 
         .banner-title {
             font-size: 14px;
@@ -388,6 +487,46 @@
 
 <?php $__env->startSection('scripts'); ?>
 <script>
+    function openSuccessModal() {
+        const modalEl = document.getElementById('exchangeSuccessModal');
+        if (!modalEl) return;
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+    }
+
+    // Inject redeem code card after confirming on modal
+    function showRedeemCode() {
+        const actionArea = document.getElementById('actionArea');
+        if (!actionArea) return;
+        const code = '1234656556';
+        actionArea.innerHTML = `
+           <div class="redeem-code-container">
+            <div class="redeem-card">
+                <div class="redeem-header">Mã đổi quà</div> 
+                <div class="redeem-code">${code}<i class="bi bi-clipboard redeem-copy" title="Sao chép" onclick="copyRedeemCode('${code}')"></i></div>
+            </div>
+            <div class="redeem-code-content">
+                
+                <div class="barcode-box"></div>
+                <div class="redeem-note">Đưa mã cho thu ngân để được hưởng ưu đãi</div>
+            </div>
+           </div>
+        `;
+    }
+
+    function copyRedeemCode(code) {
+        navigator.clipboard?.writeText(code);
+    }
+
+    // Bind agree button to replace UI when modal closes
+    document.addEventListener('DOMContentLoaded', function() {
+        const agreeBtn = document.getElementById('btnAgreeExchange');
+        if (agreeBtn) {
+            agreeBtn.addEventListener('click', function() {
+                showRedeemCode();
+            });
+        }
+    });
     // Exchange gift function
     function exchangeGift() {
         // Show confirmation dialog
@@ -400,7 +539,8 @@
             
             // Simulate API call
             setTimeout(() => {
-                showMessage('Đổi quà thành công! Quà đã được thêm vào "Sản của tôi"', 'success');
+                // Also show success modal
+                openSuccessModal();
                 
                 // Reset button
                 btn.textContent = originalText;
@@ -429,7 +569,7 @@
             z-index: 9999;
             font-size: 14px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            font-family: 'Be Vietnam Pro', sans-serif;
+
             animation: slideInRight 0.3s ease;
         `;
         toast.textContent = message;
@@ -472,4 +612,4 @@
 </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.layout-with-sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Source Web\otod-github\otod\resources\views/discount-code-detail.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Source Web\otod-github\otod\resources\views/discount-code-detail.blade.php ENDPATH**/ ?>

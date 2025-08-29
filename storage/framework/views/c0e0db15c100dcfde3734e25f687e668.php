@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'Mã giảm giá - OTOD'); ?>
 
 <?php $__env->startSection('content'); ?>

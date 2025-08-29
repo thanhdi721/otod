@@ -2,16 +2,8 @@
 
 @section('content')
     <!-- Loading Overlay -->
-    <div id="loadingOverlay" class="position-fixed top-0 start-0 w-100 h-100 d-none"
-        style="z-index: 9999; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="bg-white rounded-3 p-4 d-flex flex-column align-items-center" style="min-width: 200px;">
-                <div class="spinner-border text-primary mb-3" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <div class="text-muted">Đang xử lý...</div>
-            </div>
-        </div>
+    <div id="loadingOverlay" class="loading-overlay d-none">
+        <img src="{{ asset('/assets/images/loading-gif.webp') }}" alt="Loading" style="width: 3rem; height: 3rem;">
     </div>
 
     <div class="container-fluid px-0">
@@ -74,6 +66,20 @@
     </div>
 
     <style>
+        /* Loading overlay styles */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* bóng mờ đen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050; /* cao hơn modal */
+        }
+
         .otp-input {
             width: 50px;
             height: 50px;

@@ -1,20 +1,20 @@
-@extends('layouts.layout-not-header-footer')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay d-none">
-        <img src="{{ asset('/assets/images/loading-gif.webp') }}" alt="Loading" style="width: 3rem; height: 3rem;">
+        <img src="<?php echo e(asset('/assets/images/loading-gif.webp')); ?>" alt="Loading" style="width: 3rem; height: 3rem;">
     </div>
 
     <div class="container-fluid px-0">
         <div class="row g-0" style="height: 810px;">
             <!-- Left Hero -->
             <div class="col-12 col-lg-6 position-relative hero-section">
-                <img src="{{ asset('/assets/images/otp-img.png') }}" alt="banner" class="object-fit-cover hero-image">
+                <img src="<?php echo e(asset('/assets/images/otp-img.png')); ?>" alt="banner" class="object-fit-cover hero-image">
                 <div class="position-absolute top-0 start-0 w-100 h-100"
                     style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));"></div>
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-logo">
-                    <img src="{{ asset('/assets/images/logo-white2.png') }}" alt="OTOD" class="mb-4">
+                    <img src="<?php echo e(asset('/assets/images/logo-white2.png')); ?>" alt="OTOD" class="mb-4">
                 </div>
 
             </div>
@@ -241,10 +241,12 @@
 
                     // Simulate loading time then redirect
                     setTimeout(() => {
-                        window.location.href = '{{ route('login') }}';
+                        window.location.href = '<?php echo e(route('login')); ?>';
                     }, 2000);
                 }
             });
         })();
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.layout-not-header-footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Source Web\otod-github\otod\resources\views/Auth/verify-otp-forgot-password.blade.php ENDPATH**/ ?>

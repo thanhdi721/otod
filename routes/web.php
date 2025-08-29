@@ -175,7 +175,14 @@ Route::get('/content-detail', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
-
+// Profile (App layout) page
+Route::get('/profile-app', function () {
+    return view('profile-app');
+})->name('profile.app');
+// Points History Route
+Route::get('/points-history', function () {
+    return view('points-history');
+})->name('points-history');
 // Dashboard Owner Route
 Route::get('/dashboard-owner', function () {
     return view('dashboard-owner');
